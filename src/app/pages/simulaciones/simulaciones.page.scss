@@ -1,0 +1,7 @@
+ion-card {
+  width: 60%;
+  ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}

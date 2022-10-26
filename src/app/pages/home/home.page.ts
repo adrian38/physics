@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  options: string[] = ['Contenido', 'Simulaciones', 'Tutoriales', 'Autoexamen'];
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
+  ngOnInit() {}
+
+  routeTopage(element: number) {
+    this.navCtrl.navigateRoot(`/${this.options[element].toLocaleLowerCase()}`, {
+      animated: true,
+      animationDirection: 'forward',
+    });
+  }
 }

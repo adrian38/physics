@@ -12,6 +12,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'contenido',
+    loadChildren: () => import('./pages/contenido/contenido.module').then( m => m.ContenidoPageModule)
+  },
+  {
+    path: 'simulaciones',
+    loadChildren: () => import('./pages/simulaciones/simulaciones.module').then( m => m.SimulacionesPageModule)
+  },
+  {
+    path: 'tutoriales',
+    loadChildren: () => import('./pages/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+  },
+  {
+    path: 'autoexamen',
+    loadChildren: () => import('./pages/autoexamen/autoexamen.module').then( m => m.AutoexamenPageModule)
+  },
 ];
 
 @NgModule({
