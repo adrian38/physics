@@ -1,0 +1,19 @@
+<app-header [back]="true" headerText="Simulaciones"></app-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="simulation-view-row">
+      <iframe
+        class="simulation-view-iframe"
+        height="200"
+        width="350"
+        [src]="simulationURL()"
+      >
+      </iframe>
+    </ion-row>
+    <h6 style="margin-left: 2.5%">{{options[id].name}}</h6>
+    <ion-row style="margin-left: 2.5%">
+      <h2></h2>
+    </ion-row>
+  </ion-grid>
+</ion-content>

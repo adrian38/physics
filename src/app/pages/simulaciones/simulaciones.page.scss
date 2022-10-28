@@ -1,7 +1,9 @@
-ion-card {
-  width: 60%;
-  ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
+.simulation-pre-row {
+  display: flex;
+  justify-content: space-between;
+  .simulation-pre-col {
+    padding: 0;
+    align-items: center;
+    text-align: center;
   }
 }

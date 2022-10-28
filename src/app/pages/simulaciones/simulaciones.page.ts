@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import data from '../../utils/data-simulations.json';
 
 @Component({
   selector: 'app-simulaciones',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./simulaciones.page.scss'],
 })
 export class SimulacionesPage implements OnInit {
-  options: string[] = ['Contenido', 'Simulaciones', 'Tutoriales', 'Autoexamen'];
+  options: any[] = data;
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
   ngOnInit() {}
+
+  routeTopage(id: number) {
+    this.navCtrl.navigateRoot(`/simulation-view/${id}`, {
+      animated: true,
+      animationDirection: 'forward',
+    });
+  }
 }

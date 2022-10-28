@@ -1,0 +1,8 @@
+.simulation-view-row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  .simulation-view-iframe {
+    border-radius: 5px;
+  }
+}

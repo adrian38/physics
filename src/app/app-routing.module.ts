@@ -14,19 +14,38 @@ const routes: Routes = [
   },
   {
     path: 'contenido',
-    loadChildren: () => import('./pages/contenido/contenido.module').then( m => m.ContenidoPageModule)
+    loadChildren: () =>
+      import('./pages/contenido/contenido.module').then(
+        (m) => m.ContenidoPageModule
+      ),
   },
   {
     path: 'simulaciones',
-    loadChildren: () => import('./pages/simulaciones/simulaciones.module').then( m => m.SimulacionesPageModule)
+    loadChildren: () =>
+      import('./pages/simulaciones/simulaciones.module').then(
+        (m) => m.SimulacionesPageModule
+      ),
   },
   {
     path: 'tutoriales',
-    loadChildren: () => import('./pages/tutoriales/tutoriales.module').then( m => m.TutorialesPageModule)
+    loadChildren: () =>
+      import('./pages/tutoriales/tutoriales.module').then(
+        (m) => m.TutorialesPageModule
+      ),
   },
   {
     path: 'autoexamen',
-    loadChildren: () => import('./pages/autoexamen/autoexamen.module').then( m => m.AutoexamenPageModule)
+    loadChildren: () =>
+      import('./pages/autoexamen/autoexamen.module').then(
+        (m) => m.AutoexamenPageModule
+      ),
+  },
+  {
+    path: 'simulation-view/:id',
+    loadChildren: () =>
+      import('./pages/simulation-view/simulation-view.module').then(
+        (m) => m.SimulationViewPageModule
+      ),
   },
 ];
 

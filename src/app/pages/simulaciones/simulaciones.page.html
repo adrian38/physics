@@ -1,15 +1,11 @@
 <app-header [back]="true" headerText="Simulaciones"></app-header>
-<ion-grid>
-  <ion-row>
-    <ion-col *ngFor="let element of options; let i = index">
-      <ion-card color="primary">
-        <ion-card-header>
-          <ion-card-title>Card Title</ion-card-title>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content> Card Content </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<ion-content>
+  <ion-grid>
+    <div *ngFor="let element of options; let i = index">
+      <app-card-pre
+        (click)="routeTopage(element.id)"
+        [simulation_pre]="element"
+      ></app-card-pre>
+    </div>
+  </ion-grid>
+</ion-content>
