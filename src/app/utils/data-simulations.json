@@ -2,10 +2,14 @@
   {
     "id": "1",
     "name": "Cargas y campos",
-    "title": "",
+    "title": "En esta simulación podrás:",
     "link": "https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_es.html",
     "username": "test username",
-    "information": "test email"
+    "information": [
+      "• Observar el campo eléctrico generado por las cargas positivas y negativas.",
+      "• Medir la intensidad y dirección del campo eléctrico en cualquier posición en el plano.",
+      "• Utilizar las herramientas a tu disposición para medir distancias y graficar líneas equipotenciales."
+    ]
   },
 
   {

@@ -43,5 +43,11 @@ export class HeaderComponent implements OnInit {
         animationDirection: 'back',
       });
     }
+    if (this._location.isCurrentPathEqualTo('/examen')) {
+      this.navCon.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
   }
 }

@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { AutoexamenPageRoutingModule } from './autoexamen-routing.module';
 
 import { AutoexamenPage } from './autoexamen.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AutoexamenPageRoutingModule
+    AutoexamenPageRoutingModule,
+    ComponentsModule,
   ],
-  declarations: [AutoexamenPage]
+  declarations: [AutoexamenPage],
 })
 export class AutoexamenPageModule {}

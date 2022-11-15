@@ -11,9 +11,14 @@
       >
       </iframe>
     </ion-row>
-    <h6 style="margin-left: 2.5%">{{options[id].name}}</h6>
+    <h6 style="margin-left: 2.5%">{{options[id-1].name}}</h6>
     <ion-row style="margin-left: 2.5%">
-      <h2></h2>
+      <h4>{{options[id-1].title}}</h4>
+    </ion-row>
+    <ion-row style="margin-left: 2.5%">
+      <h5 style="margin: 0" *ngFor="let line of options[id-1].information">
+        {{line}}
+      </h5>
     </ion-row>
   </ion-grid>
 </ion-content>

@@ -14,9 +14,19 @@ export class HomePage {
   ngOnInit() {}
 
   routeTopage(element: number) {
-    this.navCtrl.navigateRoot(`/${this.options[element].toLocaleLowerCase()}`, {
-      animated: true,
-      animationDirection: 'forward',
-    });
+    if (element === 3) {
+      this.navCtrl.navigateRoot(`/autoexamen`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    } else {
+      this.navCtrl.navigateRoot(
+        `/${this.options[element].toLocaleLowerCase()}`,
+        {
+          animated: true,
+          animationDirection: 'forward',
+        }
+      );
+    }
   }
 }
