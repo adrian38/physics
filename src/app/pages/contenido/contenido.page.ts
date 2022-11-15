@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-contenido',
@@ -9,9 +9,16 @@ import { NavController } from '@ionic/angular';
 export class ContenidoPage implements OnInit {
   options: string[] = ['Electrostática', 'Corriente', 'Magnetismo'];
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, private platform: Platform) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
+  }
 
   routeTopage(element: number) {
     // this.navCtrl.navigateRoot(`/${this.options[element].toLocaleLowerCase()}`, {

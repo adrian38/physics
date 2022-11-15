@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 import data from '../../utils/data-simulations.json';
 
 @Component({
@@ -10,9 +10,16 @@ import data from '../../utils/data-simulations.json';
 export class SimulacionesPage implements OnInit {
   options: any[] = data;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, private platform: Platform) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
+  }
 
   routeTopage(id: number) {
     this.navCtrl.navigateRoot(`/simulation-view/${id}`, {

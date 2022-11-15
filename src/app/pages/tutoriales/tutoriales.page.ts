@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-tutoriales',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tutoriales.page.scss'],
 })
 export class TutorialesPage implements OnInit {
-
-  constructor() { }
+  constructor(public navCtrl: NavController, private platform: Platform) {}
 
   ngOnInit() {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
   }
-
 }

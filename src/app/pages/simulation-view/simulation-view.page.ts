@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform } from '@ionic/angular';
 import data from '../../utils/data-simulations.json';
 
 @Component({
@@ -17,7 +17,8 @@ export class SimulationViewPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     private route: ActivatedRoute,
-    private _sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer,
+    private platform: Platform
   ) {
     this.link2 =
       'https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_es.html';
@@ -25,7 +26,15 @@ export class SimulationViewPage implements OnInit {
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/simulaciones', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
   }
+
   simulationURL() {
     return this._sanitizer.bypassSecurityTrustResourceUrl(
       this.options[this.id].link
