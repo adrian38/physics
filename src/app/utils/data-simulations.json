@@ -32,16 +32,9 @@
     "username": "test username",
     "information": "test email"
   },
+
   {
     "id": "5",
-    "name": "Kit de Construcción de Circuitos CA - Laboratorio Virtual",
-    "title": "",
-    "link": "https://phet.colorado.edu/sims/html/circuit-construction-kit-ac-virtual-lab/latest/circuit-construction-kit-ac-virtual-lab_es.html",
-    "username": "test username",
-    "information": "test email"
-  },
-  {
-    "id": "6",
     "name": "Kit de Construcción de Circuitos: CD - Laboratorio Virtual",
     "title": "",
     "link": "https://phet.colorado.edu/sims/html/circuit-construction-kit-dc-virtual-lab/latest/circuit-construction-kit-dc-virtual-lab_es.html",
@@ -49,7 +42,7 @@
     "information": "test email"
   },
   {
-    "id": "7",
+    "id": "6",
     "name": "Resistencia en un alambre",
     "title": "",
     "link": "https://phet.colorado.edu/sims/html/resistance-in-a-wire/latest/resistance-in-a-wire_es.html",
@@ -57,7 +50,7 @@
     "information": "test email"
   },
   {
-    "id": "8",
+    "id": "7",
     "name": "Lab de condensadores: Intro",
     "title": "",
     "link": "https://phet.colorado.edu/sims/html/capacitor-lab-basics/latest/capacitor-lab-basics_es.html",
