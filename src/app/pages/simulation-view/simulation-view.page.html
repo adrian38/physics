@@ -2,23 +2,18 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="simulation-view-row">
-      <iframe
-        class="simulation-view-iframe"
-        height="200"
-        width="350"
-        [src]="simulationURL()"
-      >
-      </iframe>
-    </ion-row>
-    <h6 style="margin-left: 2.5%">{{options[id-1].name}}</h6>
+    <app-card-pre
+      (click)="routeTopage(options[id].id-1)"
+      [simulation_pre]="options[id-1]"
+    ></app-card-pre>
+
     <ion-row style="margin-left: 2.5%">
       <h4>{{options[id-1].title}}</h4>
     </ion-row>
     <ion-row style="margin-left: 2.5%">
-      <h5 style="margin: 0" *ngFor="let line of options[id-1].information">
+      <h6 style="margin: 0" *ngFor="let line of options[id-1].information">
         {{line}}
-      </h5>
+      </h6>
     </ion-row>
   </ion-grid>
 </ion-content>

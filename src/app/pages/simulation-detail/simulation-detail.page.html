@@ -1,0 +1,10 @@
+<app-header [back]="true" headerText="Simulación"></app-header>
+
+<ion-content [fullscreen]="true">
+  <iframe
+    class="simulation-detail-iframe"
+    allowfullscreen
+    [src]="simulationURL()"
+  >
+  </iframe>
+</ion-content>

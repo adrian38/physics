@@ -49,5 +49,19 @@ export class HeaderComponent implements OnInit {
         animationDirection: 'back',
       });
     }
+
+    if (
+      this._location.isCurrentPathEqualTo(
+        `/simulation-detail/${this.route.snapshot.paramMap.get('id')}`
+      )
+    ) {
+      this.navCon.navigateRoot(
+        `/simulation-view/${this.route.snapshot.paramMap.get('id')}`,
+        {
+          animated: true,
+          animationDirection: 'back',
+        }
+      );
+    }
   }
 }

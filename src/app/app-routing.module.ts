@@ -47,6 +47,13 @@ const routes: Routes = [
         (m) => m.SimulationViewPageModule
       ),
   },
+  {
+    path: 'simulation-detail/:id',
+    loadChildren: () =>
+      import('./pages/simulation-detail/simulation-detail.module').then(
+        (m) => m.SimulationDetailPageModule
+      ),
+  },
 ];
 
 @NgModule({
