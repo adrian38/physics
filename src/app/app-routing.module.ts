@@ -79,7 +79,19 @@ const routes: Routes = [
       import('./pages/magnetismo/magnetismo.module').then(
         (m) => m.MagnetismoPageModule
       ),
+  },  {
+    path: 'quiz',
+    loadChildren: () => import('./pages/quiz/quiz.module').then( m => m.QuizPageModule)
   },
+  {
+    path: 'quiz-elect1',
+    loadChildren: () => import('./pages/quiz-elect1/quiz-elect1.module').then( m => m.QuizElect1PageModule)
+  },
+  {
+    path: 'countdown-lottie',
+    loadChildren: () => import('./shared/countdown-lottie/countdown-lottie.module').then( m => m.CountdownLottiePageModule)
+  },
+
 ];
 
 @NgModule({

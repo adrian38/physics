@@ -1,6 +1,16 @@
 <app-header [back]="true" headerText="Simulación"></app-header>
 
 <ion-content [fullscreen]="true">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button
+      [disabled]="disabled_quiz"
+      (click)="openQuiz()"
+      color="light"
+      style="margin-right: 20px"
+    >
+      <img class="heaven" src="/assets/icon/quiz.png" />
+    </ion-fab-button>
+  </ion-fab>
   <iframe
     class="simulation-detail-iframe"
     allowfullscreen

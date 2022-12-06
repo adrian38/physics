@@ -31,6 +31,13 @@ export class HeaderComponent implements OnInit {
       });
     }
 
+    if (this._location.isCurrentPathEqualTo('/quiz')) {
+      this.navCon.navigateRoot('/simulaciones', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
+
     if (this._location.isCurrentPathEqualTo('/electrost%C3%A1tica')) {
       this.navCon.navigateRoot('/contenido', {
         animated: true,

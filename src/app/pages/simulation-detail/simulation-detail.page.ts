@@ -14,6 +14,7 @@ export class SimulationDetailPage implements OnInit {
   link: any;
   link2: any;
   options: any[] = data;
+  disabled_quiz: boolean = true;
   constructor(
     public navCtrl: NavController,
     private platform: Platform,
@@ -27,6 +28,9 @@ export class SimulationDetailPage implements OnInit {
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
 
+    if (this.id - 1 === 0) {
+      this.disabled_quiz = false;
+    }
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.navCtrl.navigateRoot(
         `/simulation-view/${this.route.snapshot.paramMap.get('id')}`,
@@ -37,6 +41,13 @@ export class SimulationDetailPage implements OnInit {
       );
     });
   }
+  openQuiz() {
+    this.navCtrl.navigateRoot(`/quiz`, {
+      animated: true,
+      animationDirection: 'forward',
+    });
+  }
+
   simulationURL() {
     return this._sanitizer.bypassSecurityTrustResourceUrl(
       this.options[this.id - 1].link

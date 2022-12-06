@@ -1,0 +1,84 @@
+:host ::ng-deep .login {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .welcome {
+    color: var(--ion-color-orange);
+    font: normal 30px "Helvetica-Bd", sans-serif;
+    // text-align: left;
+  }
+
+  .login_icon {
+    width: 80%;
+    height: 30%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/assets/icon/logo_quiz.svg");
+    // background-size: auto;
+  }
+
+  .login_buttons {
+    width: 80%;
+
+    .one_button {
+      width: 100%;
+      //padding-top: 15%;
+      padding-top: 5%;
+
+      /*    input {
+                width: 100%;
+                background-color: var(--ion-color-gray);
+            }
+
+            input:focus {
+                box-shadow: none !important;
+            } */
+
+      /*   .p-password {
+                width: 100%;
+            }
+            .pinputtext {
+                width: 100%;
+            } */
+
+      .p-button {
+        margin-top: 10%;
+        span {
+          padding-top: 5px;
+          font: normal 15px "Helvetica-Md", sans-serif !important;
+        }
+
+        color: rgb(49, 49, 57);
+        border: solid var(--ion-color-primary);
+        background: var(--ion-color-primary);
+        width: 100%;
+      }
+
+      .p-button:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .forgotten_pass_div {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+
+      .forgotten_pass {
+        color: var(--ion-color-primary-green);
+        text-decoration: none;
+        text-align: left;
+        font: normal 12px sans-serif, verdana;
+        min-width: 160px !important;
+      }
+    }
+  }
+}
