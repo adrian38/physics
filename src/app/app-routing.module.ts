@@ -59,6 +59,27 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
+  {
+    path: 'electrostática',
+    loadChildren: () =>
+      import('./pages/electrostatica/electrostatica.module').then(
+        (m) => m.ElectrostaticaPageModule
+      ),
+  },
+  {
+    path: 'corriente',
+    loadChildren: () =>
+      import('./pages/corriente/corriente.module').then(
+        (m) => m.CorrientePageModule
+      ),
+  },
+  {
+    path: 'magnetismo',
+    loadChildren: () =>
+      import('./pages/magnetismo/magnetismo.module').then(
+        (m) => m.MagnetismoPageModule
+      ),
+  },
 ];
 
 @NgModule({

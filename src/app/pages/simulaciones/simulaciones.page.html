@@ -1,6 +1,6 @@
 <app-header [back]="true" headerText="Simulaciones"></app-header>
 <ion-content>
-  <ion-grid>
+  <ion-grid style="margin-top: 7%">
     <div *ngFor="let element of options; let i = index">
       <app-card-pre
         (click)="routeTopage(element.id)"

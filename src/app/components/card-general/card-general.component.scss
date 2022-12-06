@@ -17,6 +17,17 @@
 .card-title {
   text-align: center;
   margin-top: 15%;
-  font-weight: bolder;
+  font-weight: 500;
+  color: black;
   font-size: x-large;
+  font-family: "Helvetica-Md";
+}
+
+.text-helvetica-medium {
+  font-family: "Helvetica-Md" !important;
+  font-size: 21px;
+}
+
+ion-card {
+  border: 1px solid #63b5f6;
 }

@@ -1,30 +1,31 @@
 <ion-header class="header" [translucent]="true">
-  <ion-toolbar>
-    <ion-row>
-      <ion-col size="3">
-        <ion-icon
-          *ngIf="back"
-          name="arrow-back"
-          style="
-            width: 90%;
-            height: 90%;
-            margin-top: 5%;
+  <ion-row>
+    <ion-col size="3" style="padding-top: 3.5%">
+      <ion-icon
+        *ngIf="back"
+        name="arrow-back"
+        style="
+          width: 70%;
+          height: 70%;
+          margin-top: 5%;
 
-            color: rgb(49, 49, 57);
-          "
-          (click)="backEvent()"
-        ></ion-icon>
-      </ion-col>
-      <ion-col size="6"
-        ><ion-title class="title"> {{ headerText }} </ion-title></ion-col
-      >
-      <ion-col size="3">
-        <p-avatar
-          class="avatar"
-          shape="circle"
-          image="/assets/images/user.png"
-        ></p-avatar
-      ></ion-col>
-    </ion-row>
-  </ion-toolbar>
+          color: rgb(49, 49, 57);
+        "
+        (click)="backEvent()"
+      ></ion-icon>
+    </ion-col>
+    <ion-col size="6" style="padding-top: 4%"
+      ><ion-title class="title">
+        {{ headerText }}
+      </ion-title></ion-col
+    >
+    <ion-col size="3" style="padding-top: 3%">
+      <p-avatar
+        class="avatar"
+        size="large"
+        shape="circle"
+        image="/assets/images/user.png"
+      ></p-avatar
+    ></ion-col>
+  </ion-row>
 </ion-header>

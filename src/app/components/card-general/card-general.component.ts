@@ -8,11 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardGeneralComponent implements OnInit {
   @Input() title: string = '';
 
+  disable: boolean = false;
   image = '';
 
   constructor() {}
 
   ngOnInit() {
     this.image = `assets/images/${this.title}.png`;
+
+    if (
+      this.title === 'Tutoriales' ||
+      this.title === 'Evaluación' ||
+      this.title === 'Corriente' ||
+      this.title === 'Magnetismo'
+    ) {
+      this.disable = true;
+    }
   }
 }

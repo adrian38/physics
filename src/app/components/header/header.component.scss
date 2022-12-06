@@ -1,16 +1,24 @@
-.title {
-  margin-top: 5%;
-  text-align: center;
-  font-family: "Helvetica-Md";
-  font-weight: 500;
-}
-.avatar {
-  align-items: end;
+.header {
+  height: 100%;
+  background: linear-gradient(90deg, #63b5f6, #1976d2);
 
-  margin-left: 40%;
-}
+  // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 
-.text-helvetica-medium {
-  font-family: "Helvetica-Md" !important;
-  font-size: 21px;
+  .title {
+    margin-top: 5%;
+    text-align: center;
+    font-family: "Helvetica-Md";
+    font-weight: 500;
+    font-size: 120%;
+  }
+  .avatar {
+    align-items: end;
+    margin-left: 20%;
+    margin-bottom: 50%;
+  }
+
+  .text-helvetica-medium {
+    font-family: "Helvetica-Md" !important;
+    font-size: 21px;
+  }
 }

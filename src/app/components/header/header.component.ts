@@ -21,6 +21,36 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   backEvent() {
+    console.log('************* path *************');
+    console.log(this._location.path());
+
+    if (this._location.isCurrentPathEqualTo('/home')) {
+      this.navCon.navigateRoot('/login', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
+
+    if (this._location.isCurrentPathEqualTo('/electrost%C3%A1tica')) {
+      this.navCon.navigateRoot('/contenido', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
+
+    if (this._location.isCurrentPathEqualTo('/magnetismo')) {
+      this.navCon.navigateRoot('/contenido', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
+    if (this._location.isCurrentPathEqualTo('/corriente')) {
+      this.navCon.navigateRoot('/contenido', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    }
+
     if (this._location.isCurrentPathEqualTo('/simulaciones')) {
       this.navCon.navigateRoot('/home', {
         animated: true,
@@ -43,7 +73,7 @@ export class HeaderComponent implements OnInit {
         animationDirection: 'back',
       });
     }
-    if (this._location.isCurrentPathEqualTo('/examen')) {
+    if (this._location.isCurrentPathEqualTo('/autoexamen')) {
       this.navCon.navigateRoot('/home', {
         animated: true,
         animationDirection: 'back',

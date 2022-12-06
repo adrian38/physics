@@ -19,11 +19,16 @@ export class ContenidoPage implements OnInit {
       });
     });
   }
-
   routeTopage(element: number) {
-    // this.navCtrl.navigateRoot(`/${this.options[element].toLocaleLowerCase()}`, {
-    //   animated: true,
-    //   animationDirection: 'forward',
-    // });
+    if (element === 1 || element === 2) {
+    } else {
+      this.navCtrl.navigateRoot(
+        `/${this.options[element].toLocaleLowerCase()}`,
+        {
+          animated: true,
+          animationDirection: 'forward',
+        }
+      );
+    }
   }
 }
