@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NavController, Platform } from '@ionic/angular';
 import data from '../../utils/data-simulations.json';
 
@@ -9,8 +10,13 @@ import data from '../../utils/data-simulations.json';
 })
 export class SimulacionesPage implements OnInit {
   options: any[] = data;
+  // tutorial: boolean = false;
 
-  constructor(public navCtrl: NavController, private platform: Platform) {}
+  constructor(
+    public navCtrl: NavController,
+    private platform: Platform,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.platform.backButton.subscribeWithPriority(10, () => {
@@ -22,9 +28,16 @@ export class SimulacionesPage implements OnInit {
   }
 
   routeTopage(id: number) {
-    this.navCtrl.navigateRoot(`/simulation-view/${id}`, {
-      animated: true,
-      animationDirection: 'forward',
-    });
+    if (parseInt(this.route.snapshot.paramMap.get('id'))) {
+      this.navCtrl.navigateRoot(`/tutoriales/${id}`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    } else {
+      this.navCtrl.navigateRoot(`/simulation-view/${id}`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    }
   }
 }

@@ -28,18 +28,18 @@ export class SimulationViewPage implements OnInit {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
 
     this.platform.backButton.subscribeWithPriority(10, () => {
-      this.navCtrl.navigateRoot('/simulaciones', {
+      this.navCtrl.navigateRoot('/simulaciones/0', {
         animated: true,
         animationDirection: 'back',
       });
     });
   }
 
-  simulationURL() {
-    return this._sanitizer.bypassSecurityTrustResourceUrl(
-      this.options[this.id].link
-    );
-  }
+  // simulationURL() {
+  //   return this._sanitizer.bypassSecurityTrustResourceUrl(
+  //     this.options[this.id].link
+  //   );
+  // }
 
   routeTopage(id: number) {
     console.log(id);

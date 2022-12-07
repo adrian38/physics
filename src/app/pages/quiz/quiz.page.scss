@@ -3,19 +3,18 @@
   height: 100%;
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
 
   .welcome {
-    color: var(--ion-color-orange);
-    font: normal 30px "Helvetica-Bd", sans-serif;
+    font: normal 20px "Helvetica-Roman, sans-serif";
     // text-align: left;
   }
 
   .login_icon {
     width: 80%;
-    height: 30%;
+    height: 50%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

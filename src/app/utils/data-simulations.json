@@ -9,6 +9,13 @@
       "• Observar el campo eléctrico generado por las cargas positivas y negativas.",
       "• Medir la intensidad y dirección del campo eléctrico en cualquier posición en el plano.",
       "• Utilizar las herramientas a tu disposición para medir distancias y graficar líneas equipotenciales."
+    ],
+    "tutorial_title": "Determinación de la relación entre la distancia y la intensidad del campo electrostático",
+    "tutorial_objective": "Determinación de la relación entre la distancia y la intensidad del campo electrostático.",
+    "tutorial_information": [
+      "• La simulación cuenta con cargas puntuales de +1Nc y -1Nc, que puede ubicar en cualquier parte de la pantalla, se recomienda superponerlas para lograr un campo más intenso.",
+      "• Dispone de una grilla y una cinta métrica.",
+      "• Cuenta con una herramienta para dibujar superficies equipotenciales y un sensor."
     ]
   },
 
@@ -58,6 +65,12 @@
       "• Construir un circuito bajo el régimen de corriente directa.",
       "• Medir valores de corriente y voltaje en los componentes y en los segmentos del circuito.",
       "• Visualizar el circuito tanto para componentes realísticos como esquemáticos."
+    ],
+    "tutorial_title": "Determinación de la resistencia interna de la fuente",
+    "tutorial_objective": "Determinar la resistencia interna de la fuente de corriente directa, dada una configuración de circuito determinada.",
+    "tutorial_information": [
+      "• En la simulación se presenta un circuito previamente ensamblado por el profesor.",
+      "• Para la medición de voltaje y corriente, en la simulación puede disponer de dos voltímetros y hasta seis amperímetros."
     ]
   },
   {

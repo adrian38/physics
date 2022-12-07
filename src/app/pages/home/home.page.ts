@@ -7,7 +7,13 @@ import { NavController, Platform } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  options: string[] = ['Contenido', 'Simulaciones', 'Tutoriales', 'Evaluación'];
+  options: string[] = [
+    'Contenido',
+    'Simulaciones',
+    'Tutoriales',
+    'Evaluación',
+    'Progreso',
+  ];
 
   constructor(public navCtrl: NavController, private platform: Platform) {}
 
@@ -21,11 +27,33 @@ export class HomePage {
   }
 
   routeTopage(element: number) {
-    if (element === 3 || element === 2) {
+    if (element === 4 || element === 3 || element === 2) {
       // this.navCtrl.navigateRoot(`/autoexamen`, {
       //   animated: true,
       //   animationDirection: 'forward',
       // });
+    }
+    if (element === 1) {
+      this.navCtrl.navigateRoot(
+        `/${this.options[element].toLocaleLowerCase()}/0`,
+        {
+          animated: true,
+          animationDirection: 'forward',
+        }
+      );
+    } else if (element === 1) {
+      this.navCtrl.navigateRoot(
+        `/${this.options[element].toLocaleLowerCase()}/0`,
+        {
+          animated: true,
+          animationDirection: 'forward',
+        }
+      );
+    } else if (element === 2) {
+      this.navCtrl.navigateRoot(`/simulaciones/1`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
     } else {
       this.navCtrl.navigateRoot(
         `/${this.options[element].toLocaleLowerCase()}`,

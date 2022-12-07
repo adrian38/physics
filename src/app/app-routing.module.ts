@@ -20,14 +20,14 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'simulaciones',
+    path: 'simulaciones/:id',
     loadChildren: () =>
       import('./pages/simulaciones/simulaciones.module').then(
         (m) => m.SimulacionesPageModule
       ),
   },
   {
-    path: 'tutoriales',
+    path: 'tutoriales/:id',
     loadChildren: () =>
       import('./pages/tutoriales/tutoriales.module').then(
         (m) => m.TutorialesPageModule

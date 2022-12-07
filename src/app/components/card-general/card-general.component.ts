@@ -17,7 +17,8 @@ export class CardGeneralComponent implements OnInit {
     this.image = `assets/images/${this.title}.png`;
 
     if (
-      this.title === 'Tutoriales' ||
+      // this.title === 'Tutoriales' ||
+      this.title === 'Progreso' ||
       this.title === 'Evaluación' ||
       this.title === 'Corriente' ||
       this.title === 'Magnetismo'

@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tutoriales</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [back]="true" headerText="Tutorial"></app-header>
 
 <ion-content>
-
+  <ion-grid style="margin-top: 7%">
+    <ion-row style="margin-left: 2.5%">
+      <h4>{{options[id-1].tutorial_title}}</h4>
+    </ion-row>
+    <ion-row style="margin-left: 2.5%; margin-bottom: 10%">
+      <u style="margin-bottom: 0">Objetivo</u>
+      <h6>{{options[id-1].tutorial_objective}}</h6>
+      <u>Materiales</u>
+      <h6
+        style="margin-bottom: 0"
+        *ngFor="let line of options[id-1].tutorial_information"
+      >
+        {{line}}
+      </h6>
+    </ion-row>
+  </ion-grid>
+  <app-card-pre [simulation_pre]="options[id-1]"></app-card-pre>
 </ion-content>

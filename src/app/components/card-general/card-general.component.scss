@@ -14,6 +14,22 @@
   }
 }
 
+.image-strech {
+  width: 25vh;
+  max-width: 100px;
+  height: 25vh;
+  max-height: 100px;
+  padding: 5%;
+
+  img {
+    flex-shrink: 0;
+    max-width: 98%;
+    min-height: 90%;
+    max-height: 90%;
+    border-radius: 2px;
+  }
+}
+
 .card-title {
   text-align: center;
   margin-top: 15%;
