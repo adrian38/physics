@@ -81,3 +81,14 @@
     }
   }
 }
+
+:host ::ng-deep .p-dialog {
+  margin-top: 20%;
+  width: 100%;
+  height: 100%;
+
+  .p-dialog-content {
+    background: transparent;
+    color: transparent;
+  }
+}

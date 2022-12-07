@@ -9,6 +9,8 @@ import { QuizPageRoutingModule } from './quiz-routing.module';
 import { QuizPage } from './quiz.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { ButtonModule } from 'primeng/button';
     QuizPageRoutingModule,
     ComponentsModule,
     ButtonModule,
+    DialogModule,
+    LottieModule,
   ],
   declarations: [QuizPage],
 })

@@ -12,8 +12,21 @@
       </div>
 
       <div class="one_button">
-        <p-button type="submit" label="Empezar"></p-button>
+        <p-button
+          type="submit"
+          (click)="showDialog()"
+          label="Empezar"
+        ></p-button>
       </div>
     </div>
   </div>
+  <p-dialog
+    [showHeader]="false"
+    [modal]="true"
+    header="Title"
+    [(visible)]="display"
+  >
+    <ng-lottie [options]="options" (loopComplete)="onLoopComplete()">
+    </ng-lottie>
+  </p-dialog>
 </ion-content>

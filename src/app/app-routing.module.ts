@@ -92,13 +92,6 @@ const routes: Routes = [
         (m) => m.QuizElect1PageModule
       ),
   },
-  {
-    path: 'countdown-lottie',
-    loadChildren: () =>
-      import('./pages/shared/countdown-lottie/countdown-lottie.module').then(
-        (m) => m.CountdownLottiePageModule
-      ),
-  },
 ];
 
 @NgModule({
