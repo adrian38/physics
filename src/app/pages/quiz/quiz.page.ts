@@ -24,6 +24,10 @@ export class QuizPage implements OnInit {
     });
   }
 
+  // onAnimate(animationItem: AnimationItem): void {
+  //   console.log(animationItem.currentFrame), 'frame';
+  // }
+
   onLoopComplete() {
     this.navCtrl.navigateRoot(`/quiz-elect1`, {
       animated: true,

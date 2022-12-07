@@ -91,7 +91,15 @@ const routes: Routes = [
       import('./pages/quiz-elect1/quiz-elect1.module').then(
         (m) => m.QuizElect1PageModule
       ),
+  },  {
+    path: 'quiz-elect12',
+    loadChildren: () => import('./pages/quiz-elect12/quiz-elect12.module').then( m => m.QuizElect12PageModule)
   },
+  {
+    path: 'quiz-elect13',
+    loadChildren: () => import('./pages/quiz-elect13/quiz-elect13.module').then( m => m.QuizElect13PageModule)
+  },
+
 ];
 
 @NgModule({

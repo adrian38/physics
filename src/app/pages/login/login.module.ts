@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { ButtonModule } from 'primeng/button';
+// import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ButtonModule } from 'primeng/button';
     IonicModule,
     LoginPageRoutingModule,
     ButtonModule,
+    // PasswordModule,
   ],
   declarations: [LoginPage],
 })

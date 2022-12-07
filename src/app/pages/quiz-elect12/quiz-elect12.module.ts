@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { QuizElect1PageRoutingModule } from './quiz-elect1-routing.module';
+import { QuizElect12PageRoutingModule } from './quiz-elect12-routing.module';
 
-import { QuizElect1Page } from './quiz-elect1.page';
+import { QuizElect12Page } from './quiz-elect12.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-// import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QuizElect1PageRoutingModule,
+    QuizElect12PageRoutingModule,
     ComponentsModule,
-    // ButtonModule,
   ],
-  declarations: [QuizElect1Page],
+  declarations: [QuizElect12Page],
 })
-export class QuizElect1PageModule {}
+export class QuizElect12PageModule {}
