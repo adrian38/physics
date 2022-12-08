@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { QuizElect13PageRoutingModule } from './quiz-elect13-routing.module';
+import { QuizElect14PageRoutingModule } from './quiz-elect14-routing.module';
 
-import { QuizElect13Page } from './quiz-elect13.page';
+import { QuizElect14Page } from './quiz-elect14.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { RadioButtonModule } from 'primeng/radiobutton';
 
@@ -15,10 +15,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CommonModule,
     FormsModule,
     IonicModule,
-    QuizElect13PageRoutingModule,
+    QuizElect14PageRoutingModule,
     ComponentsModule,
     RadioButtonModule,
   ],
-  declarations: [QuizElect13Page],
+  declarations: [QuizElect14Page],
 })
-export class QuizElect13PageModule {}
+export class QuizElect14PageModule {}

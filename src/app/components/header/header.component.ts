@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,9 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _location: Location,
     private navCon: NavController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public alertController: AlertController,
+    private _serv: QuizService
   ) {}
 
   ngOnInit() {
@@ -47,6 +50,59 @@ export class HeaderComponent implements OnInit {
       });
     } else if (this._location.isCurrentPathEqualTo('/electrost%C3%A1tica')) {
       this.navCon.navigateRoot('/contenido', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-elect1')) {
+      this.alertController
+        .create({
+          header: 'Alerta',
+          message: 'Desea salir del Quiz?',
+          backdropDismiss: false,
+          buttons: [
+            {
+              text: 'Cancelar',
+              role: 'cancel',
+              handler: () => {},
+            },
+            {
+              text: 'Salir',
+              handler: () => {
+                this._serv.deleteFields();
+                this.navCon.navigateRoot('/simulaciones/0', {
+                  animated: true,
+                  animationDirection: 'back',
+                });
+              },
+            },
+          ],
+        })
+        .then((alert) => {
+          alert.present();
+        });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-elect12')) {
+      this.navCon.navigateRoot('/quiz-elect1', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-elect13')) {
+      this.navCon.navigateRoot('/quiz-elect12', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-elect14')) {
+      this.navCon.navigateRoot('/quiz-elect13', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-elect15')) {
+      this.navCon.navigateRoot('/quiz-elect14', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/quiz-result')) {
+      this._serv.deleteFields();
+      this.navCon.navigateRoot('/simulaciones/0', {
         animated: true,
         animationDirection: 'back',
       });

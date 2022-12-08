@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { QuizService } from './services/quiz.service';
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -24,7 +25,10 @@ export function playerFactory(): any {
     BrowserAnimationsModule,
     LottieModule.forRoot({ player: playerFactory }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    QuizService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

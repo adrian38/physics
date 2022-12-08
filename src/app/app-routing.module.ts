@@ -99,6 +99,22 @@ const routes: Routes = [
     path: 'quiz-elect13',
     loadChildren: () => import('./pages/quiz-elect13/quiz-elect13.module').then( m => m.QuizElect13PageModule)
   },
+  {
+    path: 'quiz-elect14',
+    loadChildren: () => import('./pages/quiz-elect14/quiz-elect14.module').then( m => m.QuizElect14PageModule)
+  },
+  {
+    path: 'quiz-elect15',
+    loadChildren: () => import('./pages/quiz-elect15/quiz-elect15.module').then( m => m.QuizElect15PageModule)
+  },
+  {
+    path: 'quiz-result',
+    loadChildren: () => import('./pages/quiz-result/quiz-result.module').then( m => m.QuizResultPageModule)
+  },
+  {
+    path: 'lottie',
+    loadChildren: () => import('./shared/lottie/lottie.module').then( m => m.LottiePageModule)
+  },
 
 ];
 

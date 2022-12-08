@@ -1,0 +1,10 @@
+<app-header [back]="false" headerText="Quiz"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <div class="lottie">
+      <ng-lottie [options]="options" (loopComplete)="onLoopComplete()">
+      </ng-lottie>
+    </div>
+  </div>
+</ion-content>

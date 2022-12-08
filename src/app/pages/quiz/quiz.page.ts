@@ -17,7 +17,7 @@ export class QuizPage implements OnInit {
 
   ngOnInit() {
     this.platform.backButton.subscribeWithPriority(10, () => {
-      this.navCtrl.navigateRoot('/simulaciones', {
+      this.navCtrl.navigateRoot('/simulaciones/0', {
         animated: true,
         animationDirection: 'back',
       });

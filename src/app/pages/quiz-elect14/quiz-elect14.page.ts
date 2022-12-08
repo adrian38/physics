@@ -3,13 +3,13 @@ import { NavController, Platform } from '@ionic/angular';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
-  selector: 'app-quiz-elect13',
-  templateUrl: './quiz-elect13.page.html',
-  styleUrls: ['./quiz-elect13.page.scss'],
+  selector: 'app-quiz-elect14',
+  templateUrl: './quiz-elect14.page.html',
+  styleUrls: ['./quiz-elect14.page.scss'],
 })
-export class QuizElect13Page implements OnInit {
-  question3: string = '0';
-  question4: string = '0';
+export class QuizElect14Page implements OnInit {
+  question5: string = '0';
+  question6: string = '0';
 
   constructor(
     public navCtrl: NavController,
@@ -18,11 +18,11 @@ export class QuizElect13Page implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.question3 = this._serv.getQuestion3();
-    this.question4 = this._serv.getQuestion4();
+    this.question5 = this._serv.getQuestion5();
+    this.question6 = this._serv.getQuestion6();
 
     this.platform.backButton.subscribeWithPriority(10, () => {
-      this.navCtrl.navigateRoot('quiz-elect12', {
+      this.navCtrl.navigateRoot('quiz-elect13', {
         animated: true,
         animationDirection: 'back',
       });
@@ -30,9 +30,9 @@ export class QuizElect13Page implements OnInit {
   }
 
   nextPage() {
-    this._serv.setQuestion3(this.question3);
-    this._serv.setQuestion4(this.question4);
-    this.navCtrl.navigateRoot(`/quiz-elect14`, {
+    this._serv.setQuestion5(this.question5);
+    this._serv.setQuestion6(this.question6);
+    this.navCtrl.navigateRoot(`/quiz-elect15`, {
       animated: true,
       animationDirection: 'forward',
     });

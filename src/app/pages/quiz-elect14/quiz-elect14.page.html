@@ -1,0 +1,89 @@
+<app-header [back]="true" headerText="Quiz"></app-header>
+<ion-content [fullscreen]="true">
+  <div style="padding: 5%">
+    <ion-row>
+      <h6>4. En relación a la fuerza eléctrica es incorrecto a firmar que:</h6>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="1" [(ngModel)]="question5"></p-radioButton>
+      <label style="margin-left: 3%" for="1"
+        >La fuerza eléctrica aumenta mientas mayor
+      </label>
+      <label style="margin-left: 9%" for="1"
+        >sea la cantidad de cargas interactuantes.</label
+      >
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="2" [(ngModel)]="question5"></p-radioButton>
+      <label style="margin-left: 3%" for="2"
+        >La fuerza eléctrica disminuye a medida
+      </label>
+      <label style="margin-left: 9%" for="2"
+        >que disminuye la distancia de separación.</label
+      >
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="3" [(ngModel)]="question5"></p-radioButton>
+      <label style="margin-left: 3%" for="3"
+        >La fuerza eléctrica puede ser atractiva
+      </label>
+      <label style="margin-left: 9%" for="3"
+        >o repulsiva dependiendo de las cargas
+      </label>
+      <label style="margin-left: 9%" for="3">que interactúan.</label>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="4" [(ngModel)]="question5"></p-radioButton>
+      <label style="margin-left: 3%" for="4"
+        >La fuerza eléctrica actúa en la misma línea</label
+      >
+      <label style="margin-left: 9%" for="4"
+        >que contiene las cargas eléctricas.</label
+      >
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="5" [(ngModel)]="question5"></p-radioButton>
+      <label style="margin-left: 3%" for="5"
+        >La fuerza eléctrica entre dos cargas es de</label
+      >
+      <label style="margin-left: 9%" for="5">tipo acción-reacción.</label>
+    </ion-row>
+  </div>
+
+  <div style="padding: 5%">
+    <ion-row>
+      <h6>5. Campo eléctrico es toda región donde:</h6>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="1" [(ngModel)]="question6"></p-radioButton>
+      <label style="margin-left: 3%" for="1">hay vacío.</label>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="2" [(ngModel)]="question6"></p-radioButton>
+      <label style="margin-left: 3%" for="2">no hay vacío.</label>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="3" [(ngModel)]="question6"></p-radioButton>
+      <label style="margin-left: 3%" for="3"
+        >se producen fenómenos eléctricos.</label
+      >
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="4" [(ngModel)]="question6"></p-radioButton>
+      <label style="margin-left: 3%" for="4">hay circuitos eléctricos.</label>
+    </ion-row>
+    <ion-row style="margin-top: 5%">
+      <p-radioButton value="5" [(ngModel)]="question6"></p-radioButton>
+      <label style="margin-left: 3%" for="5">existen cargas eléctricas.</label>
+    </ion-row>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button
+      (click)="nextPage()"
+      color="light"
+      style="margin-bottom: 20%; margin-right: 20px"
+    >
+      <img class="heaven" src="/assets/icon/right-arrow_1.png" />
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

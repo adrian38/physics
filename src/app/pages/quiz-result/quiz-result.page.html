@@ -1,0 +1,16 @@
+<app-header [back]="true" headerText="Quiz"></app-header>
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <div class="lottie">
+      <h2 class="text">{{this.text}}</h2>
+      <h3>{{text_2}}</h3>
+      <h2 class="text_3">{{text_3}}</h2>
+    </div>
+  </div>
+
+  <div class="login_buttons">
+    <div class="one_button">
+      <p-button (onClick)="nextPage()" label="CONTINUAR"></p-button>
+    </div>
+  </div>
+</ion-content>

@@ -4,21 +4,21 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { QuizElect13PageRoutingModule } from './quiz-elect13-routing.module';
+import { LottiePageRoutingModule } from './lottie-routing.module';
 
-import { QuizElect13Page } from './quiz-elect13.page';
+import { LottiePage } from './lottie.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QuizElect13PageRoutingModule,
+    LottiePageRoutingModule,
+    LottieModule,
     ComponentsModule,
-    RadioButtonModule,
   ],
-  declarations: [QuizElect13Page],
+  declarations: [LottiePage],
 })
-export class QuizElect13PageModule {}
+export class LottiePageModule {}
