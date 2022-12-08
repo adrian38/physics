@@ -11,7 +11,7 @@ export class QuizPage implements OnInit {
   display: boolean = false;
   animation: any;
   options: AnimationOptions = {
-    path: '/assets/lottie/countdown.json',
+    path: '/assets/lottie/countdown_go.json',
   };
 
   constructor(public navCtrl: NavController, private platform: Platform) {}
@@ -37,19 +37,27 @@ export class QuizPage implements OnInit {
   onAnimate(animationItem: AnimationItem): void {
     console.log(animationItem.currentFrame), 'frame';
     this.animation = animationItem;
+
+    setTimeout(() => {
+      animationItem.stop();
+    }, 400);
   }
 
   onLoopComplete() {
-    if (this.display) {
-      this.navCtrl.navigateRoot(`/quiz-elect1`, {
-        animated: true,
-        animationDirection: 'forward',
-      });
-    }
+    this.animation.stop();
+    this.animation.stop();
+    // if (this.display) {
+    //   this.animation.destroy();
+    //   this.navCtrl.navigateRoot(`/quiz-elect1`, {
+    //     animated: true,
+    //     animationDirection: 'forward',
+    //   });
+    // }
   }
 
   showDialog() {
     this.display = true;
+    this.animation.play();
     // this.navCtrl.navigateRoot(`/quiz-elect1`, {
     //   animated: true,
     //   animationDirection: 'forward',
