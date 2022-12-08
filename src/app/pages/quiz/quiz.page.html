@@ -26,7 +26,11 @@
     header="Title"
     [(visible)]="display"
   >
-    <ng-lottie [options]="options" (loopComplete)="onLoopComplete()">
+    <ng-lottie
+      [options]="options"
+      (animationCreated)="onAnimate($event)"
+      (loopComplete)="onLoopComplete()"
+    >
     </ng-lottie>
   </p-dialog>
 </ion-content>
