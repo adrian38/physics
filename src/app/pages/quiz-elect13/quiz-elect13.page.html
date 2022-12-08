@@ -1,35 +1,40 @@
 <app-header [back]="true" headerText="Quiz"></app-header>
 <ion-content [fullscreen]="true">
   <div style="padding: 5%">
-    <ion-row>
-      <h6>
-        2. Método de electrización en que NO hay transferencia efectiva de
-        electrones corresponde a:
-      </h6>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="1" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="1">Método por contacto</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="2" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="2">Método por frotación</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="3" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="3">Método por inducción</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="4" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="4">Método por conducción</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="5" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="5">Método por polarización</label>
-    </ion-row>
+    <ion-list>
+      <ion-radio-group value="strawberries">
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >¿El principio deconservación de la carga dice que la
+            carga?</ion-label
+          >
+
+          <ion-radio slot="start" value="grapes"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Strawberries</ion-label>
+          <ion-radio slot="start" value="strawberries"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Pineapple</ion-label>
+          <ion-radio slot="start" value="pineapple"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Cherries (Disabled)</ion-label>
+          <ion-radio
+            slot="start"
+            value="cherries"
+            [disabled]="true"
+          ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
 
-  <div style="padding: 5%">
+  <!-- <div style="padding: 5%">
     <ion-row>
       <h6>3. ¿El principio de conservación de la carga dice que la carga?</h6>
     </ion-row>
@@ -55,7 +60,7 @@
         >no se crea, se transfiere de un cuerpo a otro</label
       >
     </ion-row>
-  </div>
+  </div> -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button
       (click)="nextPage()"

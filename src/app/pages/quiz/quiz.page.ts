@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
@@ -11,10 +11,15 @@ export class QuizPage implements OnInit {
   display: boolean = false;
   animation: any;
   options: AnimationOptions = {
+    autoplay: false,
     path: '/assets/lottie/countdown_go.json',
   };
 
-  constructor(public navCtrl: NavController, private platform: Platform) {}
+  constructor(
+    private ngZone: NgZone,
+    public navCtrl: NavController,
+    private platform: Platform
+  ) {}
 
   ngOnInit() {
     this.platform.backButton.subscribeWithPriority(10, () => {
@@ -38,26 +43,29 @@ export class QuizPage implements OnInit {
     console.log(animationItem.currentFrame), 'frame';
     this.animation = animationItem;
 
-    setTimeout(() => {
-      animationItem.stop();
-    }, 400);
+    //   setTimeout(() => {
+    //   //   animationItem.stop();
+    //   // }, 400);
   }
 
   onLoopComplete() {
-    this.animation.stop();
-    this.animation.stop();
-    // if (this.display) {
-    //   this.animation.destroy();
-    //   this.navCtrl.navigateRoot(`/quiz-elect1`, {
-    //     animated: true,
-    //     animationDirection: 'forward',
-    //   });
-    // }
+    console.log('************* animation finish *************');
+    console.log();
+
+    //   .then(() => {
+    //   window.location.reload();
+    // });
+
+    this.ngZone.runOutsideAngular(() => this.animation.stop());
+    this.navCtrl.navigateRoot(`/quiz-elect13`, {
+      animated: true,
+      animationDirection: 'forward',
+    });
   }
 
   showDialog() {
     this.display = true;
-    this.animation.play();
+    this.ngZone.runOutsideAngular(() => this.animation.play());
     // this.navCtrl.navigateRoot(`/quiz-elect1`, {
     //   animated: true,
     //   animationDirection: 'forward',

@@ -23,6 +23,9 @@ export class QuizElect12Page implements OnInit {
       });
     });
   }
+  ngOnDestroy() {
+    location.reload();
+  }
 
   ngAfterViewInit() {
     if (parseInt(this._serv.getQuestion2())) {

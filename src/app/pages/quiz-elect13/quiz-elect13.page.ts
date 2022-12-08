@@ -15,7 +15,14 @@ export class QuizElect13Page implements OnInit {
     public navCtrl: NavController,
     private platform: Platform,
     private _serv: QuizService
-  ) {}
+  ) {
+    // if (!localStorage.getItem('foo')) {
+    //   localStorage.setItem('foo', 'no reload');
+    //   location.reload();
+    // } else {
+    //   localStorage.removeItem('foo');
+    // }
+  }
 
   ngOnInit() {
     this.question3 = this._serv.getQuestion3();
