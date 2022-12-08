@@ -18,7 +18,7 @@ export class CardGeneralComponent implements OnInit {
 
     if (
       // this.title === 'Tutoriales' ||
-      this.title === 'Progreso' ||
+
       this.title === 'Evaluación' ||
       this.title === 'Corriente' ||
       this.title === 'Magnetismo'

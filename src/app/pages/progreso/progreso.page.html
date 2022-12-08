@@ -1,0 +1,39 @@
+<app-header [back]="true" headerText="Progreso"></app-header>
+<ion-content [fullscreen]="true">
+  <div style="padding: 5%; padding-top: 10%">
+    <ion-row>
+      <h2>{{options.name}}</h2>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <h3>grupo:</h3>
+      </ion-col>
+      <ion-col size="8">
+        <h4>{{this.options.grupo}}</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <h3>teléfono:</h3>
+      </ion-col>
+      <ion-col size="8">
+        <h4>{{this.options.phone}}</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4">
+        <h3>correo:</h3>
+      </ion-col>
+      <ion-col size="8">
+        <h4>{{this.options.correo}}</h4>
+      </ion-col>
+    </ion-row>
+    <div style="margin-top: 20%">
+      <ion-row>
+        <h4>{{this.options.quiz[0].name}}</h4>
+      </ion-row>
+      <p-chart type="line" [data]="data"></p-chart>
+    </div>
+  </div>
+</ion-content>

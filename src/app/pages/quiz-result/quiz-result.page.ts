@@ -43,12 +43,14 @@ export class QuizResultPage implements OnInit {
     this.temp = (this.correctAnswer / this.quiz.answer.length) * 100;
     this.correctAnswerPorCentual = Math.round(this.temp);
 
+    // this.correctAnswerPorCentual = 100;
+
     if (this.correctAnswerPorCentual === 100) {
       this.text = 'EXCELENTE';
       this.text_2 =
         'Felicidades, haz contestado correctamente todas las preguntas. ¡No pierdas el ritmo y continua con el buen trabajo!';
-      console.log('************* text *************');
-      console.log(this.text);
+      // console.log('************* text *************');
+      // console.log(this.text);
     } else if (
       this.correctAnswerPorCentual >= 50 &&
       this.correctAnswerPorCentual < 100
@@ -57,8 +59,8 @@ export class QuizResultPage implements OnInit {
       this.text_2 =
         'Tienes dominio sobre el tema, pero hay espacio para mejorar. Esfuérzate un poco más, ¡sé que puedes lograrlo!';
 
-      console.log('************* text *************');
-      console.log(this.text);
+      // console.log('************* text *************');
+      // console.log(this.text);
     } else {
       this.text = 'REGULAR';
       this.text_2 =
@@ -67,7 +69,7 @@ export class QuizResultPage implements OnInit {
       console.log('************* text *************');
       console.log(this.text);
     }
-    // this.text_3 = '90%';
+    // this.text_3 = '100%';
     this.text_3 = this.correctAnswerPorCentual.toString() + '%';
   }
 

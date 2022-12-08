@@ -1,0 +1,21 @@
+{
+  "name": "Beatriz Calzadilla Sosa",
+  "correo": "betty1194@gmail.com",
+  "phone": "53106619",
+  "grupo": "11B",
+  "password   ": "epicentro",
+  "quiz": [
+    {
+      "name": "Electro Magnetismo Quiz 1 de 3",
+      "nota": [
+        { "intento": 1, "value": 98 },
+        { "intento": 2, "value": 60 },
+        { "intento": 3, "value": 50 },
+        { "intento": 4, "value": 70 },
+        { "intento": 5, "value": 40 },
+        { "intento": 6, "value": 85 },
+        { "intento": 7, "value": 100 }
+      ]
+    }
+  ]
+}

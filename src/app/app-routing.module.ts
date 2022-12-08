@@ -115,6 +115,10 @@ const routes: Routes = [
     path: 'lottie',
     loadChildren: () => import('./shared/lottie/lottie.module').then( m => m.LottiePageModule)
   },
+  {
+    path: 'progreso',
+    loadChildren: () => import('./pages/progreso/progreso.module').then( m => m.ProgresoPageModule)
+  },
 
 ];
 

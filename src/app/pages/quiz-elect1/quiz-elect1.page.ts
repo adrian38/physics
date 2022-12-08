@@ -18,7 +18,7 @@ export class QuizElect1Page implements OnInit {
 
   ngOnInit() {
     this._serv.setQuiz({
-      name: 'elect1',
+      name: 'ElectroMagnetismo',
       count: 7,
       answer: ['2', '2', '3', '5', '4', '3', '4'],
     });

@@ -4,7 +4,15 @@
     <div class="lottie">
       <h2 class="text">{{this.text}}</h2>
       <h3>{{text_2}}</h3>
-      <h2 class="text_3">{{text_3}}</h2>
+      <h2
+        [ngClass]="
+          this.correctAnswerPorCentual === 100
+            ? 'text_4'
+            : 'text_3'
+        "
+      >
+        {{text_3}}
+      </h2>
     </div>
   </div>
 

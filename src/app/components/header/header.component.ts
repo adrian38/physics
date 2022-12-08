@@ -148,6 +148,11 @@ export class HeaderComponent implements OnInit {
         animated: true,
         animationDirection: 'back',
       });
+    } else if (this._location.isCurrentPathEqualTo('/progreso')) {
+      this.navCon.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
     } else if (this._location.isCurrentPathEqualTo('/autoexamen')) {
       this.navCon.navigateRoot('/home', {
         animated: true,

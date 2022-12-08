@@ -27,7 +27,7 @@ export class HomePage {
   }
 
   routeTopage(element: number) {
-    if (element === 4 || element === 3 || element === 2) {
+    if (element === 3 || element === 2) {
       // this.navCtrl.navigateRoot(`/autoexamen`, {
       //   animated: true,
       //   animationDirection: 'forward',
