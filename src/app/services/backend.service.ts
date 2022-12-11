@@ -36,4 +36,18 @@ export class ApiService {
       }
     });
   }
+
+  //   async getUserFootPrints(id: number): Promise<any> {
+  //     return new Promise<boolean>(async (resolve, reject) => {
+  //       this.http
+  //         .get(`${this.url_server}/user/${id}/footprints`)
+  //         .subscribe(async (data: any) => {
+  //           if (data) {
+  //             resolve(data);
+  //           } else {
+  //             reject();
+  //           }
+  //         });
+  //     });
+  //   }
 }
