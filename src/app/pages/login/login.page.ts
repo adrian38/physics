@@ -6,6 +6,7 @@ import {
   Platform,
 } from '@ionic/angular';
 import { UsuarioModel } from 'src/app/models/usuario.model';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -21,11 +22,50 @@ export class LoginPage implements OnInit {
     public navController: NavController,
     public alertController: AlertController,
     public platform: Platform,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private https: HttpClient
   ) {}
 
   ngOnInit() {
     this.subscriptions();
+    this.getArtists();
+  }
+
+  async getArtists(): Promise<[]> {
+    return new Promise<[]>((resolve, reject) => {
+      try {
+        const headers = {
+          //page: `${page}`,
+        };
+        const requestOptions = {
+          headers: new HttpHeaders(headers),
+          //params: { page: `${page}` },
+        };
+        console.log('************* getArtist *************');
+        const subscription = this.https
+          .get(
+            `https://moviesapi20221211011349.azurewebsites.net/api/genres`,
+            requestOptions
+          )
+          .subscribe(
+            (data: any) => {
+              try {
+                resolve(data);
+                console.log('************* data *************');
+                console.log(data);
+              } catch (err) {
+                console.log('************* error *************');
+                console.log(err);
+                reject(err);
+              }
+              subscription.unsubscribe();
+            },
+            (error) => reject(error)
+          );
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 
   subscriptions() {

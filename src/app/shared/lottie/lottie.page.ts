@@ -18,8 +18,8 @@ export class LottiePage implements OnInit {
 
   onLoopComplete() {
     this.navCtrl.navigateRoot(`/quiz-result`, {
-      animated: true,
-      animationDirection: 'forward',
+      // animated: true,
+      // animationDirection: 'forward',
     });
   }
 }

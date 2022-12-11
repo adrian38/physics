@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { QuizService } from './services/quiz.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -24,6 +26,8 @@ export function playerFactory(): any {
     AppRoutingModule,
     BrowserAnimationsModule,
     LottieModule.forRoot({ player: playerFactory }),
+    NgxChartsModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

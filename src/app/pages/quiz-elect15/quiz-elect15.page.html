@@ -2,52 +2,62 @@
 <ion-content [fullscreen]="true">
   <div style="padding: 5%">
     <ion-row>
-      <h6>
+      <h6 style="margin-bottom: 0">
         6. Se carga un condensador plano bajo una cierta diferencia de potencial
         y después se desconecta de la fuente. Si ahora se separan las placas
       </h6>
     </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton
-        (onClick)=" setAnswer()"
-        value="1"
-        [(ngModel)]="question7"
-      ></p-radioButton>
-      <label style="margin-left: 3%" for="1"
-        >la carga del condensador se modifica.</label
-      >
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton
-        (onClick)=" setAnswer()"
-        value="2"
-        [(ngModel)]="question7"
-      ></p-radioButton>
-      <label style="margin-left: 3%" for="2"
-        >la diferencia de potencial entre las</label
-      >
-      <label style="margin-left: 9%" for="2">armaduras disminuye.</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton
-        (onClick)=" setAnswer()"
-        value="3"
-        [(ngModel)]="question7"
-      ></p-radioButton>
-      <label style="margin-left: 3%" for="3">la capacidad aumenta.</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton
-        (onClick)=" setAnswer()"
-        value="4"
-        [(ngModel)]="question7"
-      ></p-radioButton>
-      <label style="margin-left: 3%" for="4"
-        >la energía electrostática almacenada</label
-      >
-      <label style="margin-left: 9%" for="4">aumenta.</label>
-    </ion-row>
+    <ion-list style="padding-top: 0">
+      <ion-radio-group [(ngModel)]="this.question7">
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >la carga del condensador se modifica.</ion-label
+          >
+
+          <ion-radio
+            (ionFocus)="setAnswer()"
+            slot="start"
+            value="1"
+          ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >la diferencia de potencial entre las armaduras
+            disminuye.</ion-label
+          >
+          <ion-radio
+            (ionFocus)="setAnswer()"
+            slot="start"
+            value="2"
+          ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >la capacidad aumenta.</ion-label
+          >
+          <ion-radio
+            (ionFocus)="setAnswer()"
+            slot="start"
+            value="3"
+          ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >la energía electrostática almacenada aumenta.</ion-label
+          >
+          <ion-radio
+            (ionFocus)="setAnswer()"
+            slot="start"
+            value="4"
+          ></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
+
   <div class="login_buttons">
     <div class="one_button">
       <p-button (onClick)="nextPage()" label="EVALUAR"></p-button>

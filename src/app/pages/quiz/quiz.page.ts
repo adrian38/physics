@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
-// import { AnimationItem } from 'lottie-web';
+import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 @Component({
   selector: 'app-quiz',
@@ -9,11 +9,17 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class QuizPage implements OnInit {
   display: boolean = false;
+  animation: any;
   options: AnimationOptions = {
-    path: '/assets/lottie/countdown.json',
+    autoplay: false,
+    path: '/assets/lottie/countdown_go.json',
   };
 
-  constructor(public navCtrl: NavController, private platform: Platform) {}
+  constructor(
+    private ngZone: NgZone,
+    public navCtrl: NavController,
+    private platform: Platform
+  ) {}
 
   ngOnInit() {
     this.platform.backButton.subscribeWithPriority(10, () => {
@@ -24,11 +30,22 @@ export class QuizPage implements OnInit {
     });
   }
 
-  // onAnimate(animationItem: AnimationItem): void {
-  //   console.log(animationItem.currentFrame), 'frame';
-  // }
+  ngOnDestroy() {
+    try {
+      this.animation.destroy();
+      // console.log('************* on destroy *************');
+    } catch (err) {
+      // console.log('Failed destroying lottie animation', err);
+    }
+  }
+
+  onAnimate(animationItem: AnimationItem): void {
+    // console.log(animationItem.currentFrame), 'frame';
+    this.animation = animationItem;
+  }
 
   onLoopComplete() {
+    this.ngZone.runOutsideAngular(() => this.animation.stop());
     this.navCtrl.navigateRoot(`/quiz-elect1`, {
       animated: true,
       animationDirection: 'forward',
@@ -37,5 +54,6 @@ export class QuizPage implements OnInit {
 
   showDialog() {
     this.display = true;
+    this.ngZone.runOutsideAngular(() => this.animation.play());
   }
 }

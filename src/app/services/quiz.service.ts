@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 export class QuizService {
   quiz = { name: 'name', count: 0, answer: [] };
 
-  question1: string = '';
-  question2: string = '';
-  question3: string = '';
-  question4: string = '';
-  question5: string = '';
-  question6: string = '';
-  question7: string = '';
+  question1: string = '0';
+  question2: string = '0';
+  question3: string = '0';
+  question4: string = '0';
+  question5: string = '0';
+  question6: string = '0';
+  question7: string = '0';
 
   constructor() {}
 
@@ -75,11 +75,11 @@ export class QuizService {
 
   deleteFields() {
     this.quiz = { name: 'name', count: 0, answer: [] };
-    this.question1 = '';
-    this.question2 = '';
-    this.question3 = '';
-    this.question4 = '';
-    this.question5 = '';
-    this.question6 = '';
+    this.question1 = '0';
+    this.question2 = '0';
+    this.question3 = '0';
+    this.question4 = '0';
+    this.question5 = '0';
+    this.question6 = '0';
   }
 }

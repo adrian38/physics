@@ -6,6 +6,7 @@
   "password   ": "epicentro",
   "quiz": [
     {
+      "type": "Quiz",
       "name": "Electro Magnetismo Quiz 1 de 3",
       "nota": [
         { "intento": 1, "value": 98 },

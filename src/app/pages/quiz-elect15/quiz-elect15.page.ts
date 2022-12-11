@@ -35,8 +35,8 @@ export class QuizElect15Page implements OnInit {
 
   nextPage() {
     this.navCtrl.navigateRoot(`/lottie`, {
-      animated: true,
-      animationDirection: 'forward',
+      // animated: true,
+      // animationDirection: 'forward',
     });
   }
 }

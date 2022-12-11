@@ -18,13 +18,21 @@ export class QuizResultPage implements OnInit {
   text_2: string = '';
   text_3: string = '';
 
+  total = 0;
+  colorScheme = [{ name: 'Correctas', value: '#63B5F6' }];
+
+  correctAnswerGraph = [];
+
   constructor(
     public navCtrl: NavController,
     private platform: Platform,
     private _serv: QuizService
-  ) {}
+  ) {
+    this.quiz = this._serv.getQuiz();
+    // this.total = 7;
 
-  ngOnInit() {
+    this.total = this.quiz.answer.length;
+
     this.result.push(this._serv.getQuestion1());
     this.result.push(this._serv.getQuestion2());
     this.result.push(this._serv.getQuestion3());
@@ -32,13 +40,17 @@ export class QuizResultPage implements OnInit {
     this.result.push(this._serv.getQuestion5());
     this.result.push(this._serv.getQuestion6());
     this.result.push(this._serv.getQuestion7());
-    this.quiz = this._serv.getQuiz();
 
     for (let [index, element] of this.quiz.answer.entries()) {
       if (element === this.result[index]) {
         this.correctAnswer++;
       }
     }
+
+    // this.correctAnswer = 5;
+    this.correctAnswerGraph = [
+      { name: 'Correctas', value: this.correctAnswer },
+    ];
 
     this.temp = (this.correctAnswer / this.quiz.answer.length) * 100;
     this.correctAnswerPorCentual = Math.round(this.temp);
@@ -72,6 +84,8 @@ export class QuizResultPage implements OnInit {
     // this.text_3 = '100%';
     this.text_3 = this.correctAnswerPorCentual.toString() + '%';
   }
+
+  ngOnInit() {}
 
   nextPage() {
     this._serv.deleteFields();

@@ -2,60 +2,97 @@
 <ion-content [fullscreen]="true">
   <div style="padding: 5%">
     <ion-row>
-      <h6>
+      <h6 style="margin-bottom: 0">
         2. Método de electrización en que NO hay transferencia efectiva de
         electrones corresponde a:
       </h6>
     </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="1" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="1">Método por contacto</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="2" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="2">Método por frotación</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="3" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="3">Método por inducción</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="4" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="4">Método por conducción</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="5" [(ngModel)]="question3"></p-radioButton>
-      <label style="margin-left: 3%" for="5">Método por polarización</label>
-    </ion-row>
+    <ion-list style="padding-top: 0">
+      <ion-radio-group [(ngModel)]="this.question3">
+        <ion-item>
+          <ion-label style="white-space: normal">Método por contacto</ion-label>
+
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >Método por frotación</ion-label
+          >
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >Método por inducción</ion-label
+          >
+          <ion-radio slot="start" value="3"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >Método por conducción</ion-label
+          >
+          <ion-radio slot="start" value="4"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >Método por polarización</ion-label
+          >
+          <ion-radio slot="start" value="5"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
 
-  <div style="padding: 5%">
+  <div style="padding-left: 5%; padding-right: 5%">
     <ion-row>
-      <h6>3. ¿El principio de conservación de la carga dice que la carga?</h6>
+      <h6 style="margin: 0">
+        3. ¿El principio de conservación de la carga dice que la carga?
+      </h6>
     </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="1" [(ngModel)]="question4"></p-radioButton>
-      <label style="margin-left: 3%" for="1">se crea por frotamiento</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="2" [(ngModel)]="question4"></p-radioButton>
-      <label style="margin-left: 3%" for="2">se crea por inducción</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="3" [(ngModel)]="question4"></p-radioButton>
-      <label style="margin-left: 3%" for="3">se crea por polarización</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="4" [(ngModel)]="question4"></p-radioButton>
-      <label style="margin-left: 3%" for="4">se crea por ionización</label>
-    </ion-row>
-    <ion-row style="margin-top: 5%">
-      <p-radioButton value="5" [(ngModel)]="question4"></p-radioButton>
-      <label style="margin-left: 3%" for="5"
-        >no se crea, se transfiere de un cuerpo a otro</label
-      >
-    </ion-row>
+    <ion-list style="padding-top: 0">
+      <ion-radio-group [(ngModel)]="this.question4">
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >se crea por frotamiento</ion-label
+          >
+
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >se crea por inducción</ion-label
+          >
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >se crea por polarización</ion-label
+          >
+          <ion-radio slot="start" value="3"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >se crea por ionización</ion-label
+          >
+          <ion-radio slot="start" value="4"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >no se crea, se transfiere de un cuerpo a otro</ion-label
+          >
+          <ion-radio slot="start" value="5"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button
       (click)="nextPage()"

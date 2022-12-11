@@ -10,6 +10,7 @@ import { QuizResultPage } from './quiz-result.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ButtonModule } from 'primeng/button';
 import { LottieModule } from 'ngx-lottie';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { LottieModule } from 'ngx-lottie';
     ComponentsModule,
     ButtonModule,
     LottieModule,
+    NgxChartsModule,
   ],
   declarations: [QuizResultPage],
 })

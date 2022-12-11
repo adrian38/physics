@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, Platform } from '@ionic/angular';
 import data from '../../utils/data-user.json';
 
 @Component({
@@ -9,7 +10,7 @@ import data from '../../utils/data-user.json';
 export class ProgresoPage implements OnInit {
   options: any = data;
   data: any;
-  constructor() {
+  constructor(public navCtrl: NavController, private platform: Platform) {
     let temp: any[] = [];
     let temp_notes: any[] = [];
 
@@ -29,5 +30,12 @@ export class ProgresoPage implements OnInit {
     };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
+  }
 }
