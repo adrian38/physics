@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Platform } from '@ionic/angular';
+import {
+  AlertController,
+  LoadingController,
+  NavController,
+  Platform,
+} from '@ionic/angular';
 
 import { QuizService } from 'src/app/services/quiz.service';
+import { ApiService } from 'src/app/services/backend.service'; //API
 
 @Component({
   selector: 'app-quiz-result',
@@ -22,11 +28,15 @@ export class QuizResultPage implements OnInit {
   colorScheme = [{ name: 'Correctas', value: '#63B5F6' }];
 
   correctAnswerGraph = [];
+  loading: HTMLIonLoadingElement = null; ///API
 
   constructor(
     public navCtrl: NavController,
     private platform: Platform,
-    private _serv: QuizService
+    private _serv: QuizService,
+    public alertController: AlertController, ///API
+    public loadingController: LoadingController, ///API
+    private _apiService: ApiService ///API
   ) {
     this.quiz = this._serv.getQuiz();
     // this.total = 7;
@@ -87,11 +97,75 @@ export class QuizResultPage implements OnInit {
 
   ngOnInit() {}
 
+  ///API
+
+  async showLoading(message: string) {
+    this.loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: message,
+    });
+
+    return this.loading.present();
+  }
+
+  async saveResult(email: string, password: string) {
+    this.showLoading('Guardando resultados');
+
+    try {
+      if (await this._apiService.login(email, password)) {
+        console.log('************* navigating home *************');
+        this.navCtrl.navigateRoot('/simulaciones/0', {
+          animated: true,
+          animationDirection: 'forward',
+        });
+      } else {
+        this.showAlert();
+      }
+    } catch (err) {
+      this.showAlert();
+      console.log('============= err =============');
+      console.log(err);
+    }
+    this.loading.dismiss();
+  }
+
+  async showAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Error conectividad',
+      message: 'Si el problema persiste contactar con la administración',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          //handler: () => {},
+        },
+        {
+          text: 'Continuar',
+          handler: () => {
+            this.navCtrl.navigateRoot('/simulaciones/0', {
+              animated: true,
+              animationDirection: 'forward',
+            });
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
   nextPage() {
     this._serv.deleteFields();
-    this.navCtrl.navigateRoot(`/simulaciones/0`, {
-      animated: true,
-      animationDirection: 'forward',
-    });
+
+    ///lamada a la api
+    let body = {
+      name: 'Electromagnetismo_1',
+      score: this.correctAnswerPorCentual,
+      type: 'quiz',
+      status: false,
+    };
+    this._apiService.saveExamResults(body);
   }
 }

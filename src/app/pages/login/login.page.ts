@@ -92,7 +92,8 @@ export class LoginPage implements OnInit {
   // }
 
   onSubmit() {
-    this.login(this.user.name, this.user.password);
+    console.log(this.user, 'user');
+    this.login(this.user.username, this.user.password);
   }
 
   async showAlert() {
