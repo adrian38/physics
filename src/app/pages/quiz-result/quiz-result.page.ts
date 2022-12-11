@@ -108,11 +108,11 @@ export class QuizResultPage implements OnInit {
     return this.loading.present();
   }
 
-  async saveResult(email: string, password: string) {
+  async saveResult(body: any) {
     this.showLoading('Guardando resultados');
 
     try {
-      if (await this._apiService.login(email, password)) {
+      if (await this._apiService.saveExamResults(body)) {
         console.log('************* navigating home *************');
         this.navCtrl.navigateRoot('/simulaciones/0', {
           animated: true,
