@@ -7,7 +7,7 @@ import {
 } from '@ionic/angular';
 import { UsuarioModel } from 'src/app/models/usuario.model';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
+import { ApiService } from 'src/app/services/backend.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -23,49 +23,34 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     public platform: Platform,
     public loadingController: LoadingController,
-    private https: HttpClient
+    private https: HttpClient,
+    private _apiService: ApiService
   ) {}
 
   ngOnInit() {
     this.subscriptions();
-    this.getArtists();
   }
+  ngOnDestroy() {}
 
-  async getArtists(): Promise<[]> {
-    return new Promise<[]>((resolve, reject) => {
-      try {
-        const headers = {
-          //page: `${page}`,
-        };
-        const requestOptions = {
-          headers: new HttpHeaders(headers),
-          //params: { page: `${page}` },
-        };
-        console.log('************* getArtist *************');
-        const subscription = this.https
-          .get(
-            `https://moviesapi20221211011349.azurewebsites.net/api/genres`,
-            requestOptions
-          )
-          .subscribe(
-            (data: any) => {
-              try {
-                resolve(data);
-                console.log('************* data *************');
-                console.log(data);
-              } catch (err) {
-                console.log('************* error *************');
-                console.log(err);
-                reject(err);
-              }
-              subscription.unsubscribe();
-            },
-            (error) => reject(error)
-          );
-      } catch (err) {
-        reject(err);
+  async login(email: string, password: string) {
+    this.showLoading('Verificando');
+
+    try {
+      if (await this._apiService.login(email, password)) {
+        console.log('************* navigating home *************');
+        this.navController.navigateRoot('/home', {
+          animated: true,
+          animationDirection: 'forward',
+        });
+      } else {
+        this.showAlert();
       }
-    });
+    } catch (err) {
+      this.showAlert();
+      console.log('============= err =============');
+      console.log(err);
+    }
+    this.loading.dismiss();
   }
 
   subscriptions() {
@@ -99,18 +84,15 @@ export class LoginPage implements OnInit {
       });
   }
 
-  checkUser() {
-    this.navController.navigateRoot('/home', {
-      animated: true,
-      animationDirection: 'forward',
-    });
-  }
+  // checkUser() {
+  //   this.navController.navigateRoot('/home', {
+  //     animated: true,
+  //     animationDirection: 'forward',
+  //   });
+  // }
 
   onSubmit() {
-    this.navController.navigateRoot('/home', {
-      animated: true,
-      animationDirection: 'forward',
-    });
+    this.login(this.user.name, this.user.password);
   }
 
   async showAlert() {

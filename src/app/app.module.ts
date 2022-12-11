@@ -13,6 +13,7 @@ import player from 'lottie-web';
 import { QuizService } from './services/quiz.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/backend.service';
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -32,6 +33,7 @@ export function playerFactory(): any {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     QuizService,
+    ApiService,
   ],
   bootstrap: [AppComponent],
 })
