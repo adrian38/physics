@@ -81,7 +81,7 @@ const routes: Routes = [
       import('./pages/corriente/corriente.module').then(
         (m) => m.CorrientePageModule
       ),
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
   },
   {
     path: 'magnetismo',
