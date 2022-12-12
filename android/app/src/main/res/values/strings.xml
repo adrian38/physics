@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">physics</string>
-    <string name="title_activity_main">physics</string>
-    <string name="package_name">io.ionic.physics</string>
-    <string name="custom_url_scheme">io.ionic.physics</string>
+    <string name="app_name">physics-teacher</string>
+    <string name="title_activity_main">physics-teacher</string>
+    <string name="package_name">io.ionic.physics.teacher</string>
+    <string name="custom_url_scheme">io.ionic.physics.teacher</string>
 </resources>
