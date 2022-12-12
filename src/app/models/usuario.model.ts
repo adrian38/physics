@@ -9,8 +9,17 @@ export class Address {
   latitude: string;
   longitude: string;
 
-  constructor(street: '', number: '', portal: '', stair: '', floor: '',
-    door: '', cp: '', latitude: '', longitude: '') {
+  constructor(
+    street: '',
+    number: '',
+    portal: '',
+    stair: '',
+    floor: '',
+    door: '',
+    cp: '',
+    latitude: '',
+    longitude: ''
+  ) {
     this.street = street;
     this.number = number;
     this.portal = portal;
@@ -28,7 +37,7 @@ export class UsuarioModel {
   password: string;
   name: string;
   connection_id: number;
-  partner_id: number
+  partner_id: number;
   type: string;
   connected: boolean;
   phone: number;
@@ -38,21 +47,22 @@ export class UsuarioModel {
   date: string;
   avatar: any;
   error: number;
+  group: number;
 
   constructor() {
-    this.username = "";
-    this.password = "";
-    this.name = "";
+    this.username = '';
+    this.password = '';
+    this.name = '';
     this.connection_id = 0;
     this.partner_id = 0;
-    this.type = "";
+    this.type = '';
     this.connected = false;
     this.phone = 0;
     this.id = 0;
-    this.realname = "";
-    this.date = "";
-    this.avatar = "";
+    this.realname = '';
+    this.date = '';
+    this.avatar = '';
     this.error = 0;
+    this.group = 0;
   }
 }
-

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
+    canActivate: [AuthGuardService],
   },
   {
     path: '',
-    redirectTo: 'quiz-result',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -18,6 +20,7 @@ const routes: Routes = [
       import('./pages/contenido/contenido.module').then(
         (m) => m.ContenidoPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'simulaciones/:id',
@@ -25,6 +28,7 @@ const routes: Routes = [
       import('./pages/simulaciones/simulaciones.module').then(
         (m) => m.SimulacionesPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'tutoriales/:id',
@@ -32,6 +36,7 @@ const routes: Routes = [
       import('./pages/tutoriales/tutoriales.module').then(
         (m) => m.TutorialesPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'autoexamen',
@@ -39,6 +44,7 @@ const routes: Routes = [
       import('./pages/autoexamen/autoexamen.module').then(
         (m) => m.AutoexamenPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'simulation-view/:id',
@@ -46,6 +52,7 @@ const routes: Routes = [
       import('./pages/simulation-view/simulation-view.module').then(
         (m) => m.SimulationViewPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'simulation-detail/:id',
@@ -53,6 +60,7 @@ const routes: Routes = [
       import('./pages/simulation-detail/simulation-detail.module').then(
         (m) => m.SimulationDetailPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'login',
@@ -65,6 +73,7 @@ const routes: Routes = [
       import('./pages/electrostatica/electrostatica.module').then(
         (m) => m.ElectrostaticaPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'corriente',
@@ -72,6 +81,7 @@ const routes: Routes = [
       import('./pages/corriente/corriente.module').then(
         (m) => m.CorrientePageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'magnetismo',
@@ -138,6 +148,7 @@ const routes: Routes = [
       import('./pages/progreso/progreso.module').then(
         (m) => m.ProgresoPageModule
       ),
+    canActivate: [AuthGuardService],
   },
 ];
 

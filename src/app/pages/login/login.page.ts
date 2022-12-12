@@ -6,7 +6,7 @@ import {
   Platform,
 } from '@ionic/angular';
 import { UsuarioModel } from 'src/app/models/usuario.model';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { ApiService } from 'src/app/services/backend.service';
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
     public alertController: AlertController,
     public platform: Platform,
     public loadingController: LoadingController,
-    private https: HttpClient,
+    // private https: HttpClient,
     private _apiService: ApiService
   ) {}
 
@@ -43,9 +43,11 @@ export class LoginPage implements OnInit {
           animationDirection: 'forward',
         });
       } else {
+        this.btn_disabled = false;
         this.showAlert();
       }
     } catch (err) {
+      this.btn_disabled = false;
       this.showAlert();
       console.log('============= err =============');
       console.log(err);
@@ -115,6 +117,7 @@ export class LoginPage implements OnInit {
   }
 
   async showLoading(message: string) {
+    this.btn_disabled = true;
     this.loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: message,
