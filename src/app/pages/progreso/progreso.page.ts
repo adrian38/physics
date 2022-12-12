@@ -21,7 +21,11 @@ export class ProgresoPage implements OnInit {
   loading: HTMLIonLoadingElement = null; ///API
   temp: any[] = [];
   temp_notes: any[] = [];
+<<<<<<< HEAD
+  exam_name:any[]=[];
+=======
   temp_name: any[] = [];
+>>>>>>> omittLottie
 
   constructor(
     public navCtrl: NavController,
@@ -61,7 +65,11 @@ export class ProgresoPage implements OnInit {
       for (let element of this.options) {
         this.temp.push(element.intents_number.toString());
         this.temp_notes.push(element.score);
+<<<<<<< HEAD
+        this.exam_name.push(element.name);
+=======
         this.temp_name.push(element.name);
+>>>>>>> omittLottie
       }
 
       this.data = {
