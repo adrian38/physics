@@ -1,7 +1,7 @@
 {
-  "name": "physics",
+  "name": "physics.teacher",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Adrian Nieves de la Cruz",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
