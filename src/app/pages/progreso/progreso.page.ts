@@ -16,6 +16,7 @@ export class ProgresoPage implements OnInit {
   loading: HTMLIonLoadingElement = null; ///API
   temp: any[] = [];
   temp_notes: any[] = [];
+  exam_name:any[]=[];
 
 
   constructor(public navCtrl: NavController, 
@@ -48,6 +49,7 @@ export class ProgresoPage implements OnInit {
       for (let element of this.options) {
         this.temp.push(element.intents_number.toString());
         this.temp_notes.push(element.score);
+        this.exam_name.push(element.name);
       }
   
       this.data = {
