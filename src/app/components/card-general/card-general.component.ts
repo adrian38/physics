@@ -19,7 +19,7 @@ export class CardGeneralComponent implements OnInit {
     if (
       // this.title === 'Tutoriales' ||
 
-      this.title === 'Evaluación' ||
+      // this.title === 'Evaluación' ||
       this.title === 'Magnetismo'
     ) {
       this.disable = true;

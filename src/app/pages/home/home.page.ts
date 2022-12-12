@@ -27,20 +27,11 @@ export class HomePage {
   }
 
   routeTopage(element: number) {
-    if (element === 3 || element === 2) {
-      // this.navCtrl.navigateRoot(`/autoexamen`, {
-      //   animated: true,
-      //   animationDirection: 'forward',
-      // });
-    }
-    if (element === 1) {
-      this.navCtrl.navigateRoot(
-        `/${this.options[element].toLocaleLowerCase()}/0`,
-        {
-          animated: true,
-          animationDirection: 'forward',
-        }
-      );
+    if (element === 3) {
+      this.navCtrl.navigateRoot(`/autoexamen`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
     } else if (element === 1) {
       this.navCtrl.navigateRoot(
         `/${this.options[element].toLocaleLowerCase()}/0`,

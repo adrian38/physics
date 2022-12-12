@@ -6,12 +6,22 @@
         [ngClass]="
           this.title == 'Electrostática' ||
           this.title == 'Corriente' ||
+          this.title == 'Circuitos' ||
           this.title == 'Magnetismo'
             ? 'image-strech'
             : 'image-left'
         "
       >
-        <img style="margin-top: 5px" src="{{ image }}" /></div
+        <img
+          *ngIf="this.title !== 'Circuitos'"
+          style="margin-top: 5px"
+          src="{{ image }}"
+        />
+        <img
+          *ngIf="this.title === 'Circuitos'"
+          style="margin-top: 5px"
+          src="assets/images/Corriente.png"
+        /></div
     ></ion-col>
     <ion-col size="8"
       ><ion-title class="card-title"> {{ title }} </ion-title></ion-col

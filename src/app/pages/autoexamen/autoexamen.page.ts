@@ -7,6 +7,8 @@ import { NavController, Platform } from '@ionic/angular';
   styleUrls: ['./autoexamen.page.scss'],
 })
 export class AutoexamenPage implements OnInit {
+  options: string[] = ['Electrostática', 'Circuitos', 'Magnetismo'];
+
   constructor(public navCtrl: NavController, private platform: Platform) {}
 
   ngOnInit() {
@@ -16,5 +18,23 @@ export class AutoexamenPage implements OnInit {
         animationDirection: 'back',
       });
     });
+  }
+  routeTopage(element: number) {
+    if (element === 0) {
+      this.navCtrl.navigateRoot(`/exam-elect`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    } else if (element === 1) {
+      this.navCtrl.navigateRoot(`/exam-circu`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    } else if (element === 2) {
+      this.navCtrl.navigateRoot(`/exam-magne`, {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    }
   }
 }

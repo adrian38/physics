@@ -23,13 +23,13 @@ export class ApiService {
         password: password,
       };
 
-      console.log(postParams, 'postParams User');
+      // console.log(postParams, 'postParams User');
 
       try {
         this.http
           .post(`${this.url_server}/login`, postParams)
           .subscribe(async (data: any) => {
-            console.log(data, 'user');
+            // console.log(data, 'user');
 
             if (data.length > 0) {
               this.user.username = data[0].email;
@@ -52,14 +52,14 @@ export class ApiService {
   }
 
   async saveExamResults(body: any): Promise<any> {
-    console.log('body', body);
+    // console.log('body', body);
     return new Promise<boolean>(async (resolve, reject) => {
       let postParams = {
         id_student: this.user.id,
       };
 
       let final = { ...postParams, ...body };
-      console.log('final', final);
+      // console.log('final', final);
       try {
         this.http
           .post(`${this.url_server}/exam`, final)

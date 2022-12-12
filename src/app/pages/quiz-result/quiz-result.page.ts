@@ -8,7 +8,6 @@ import {
 
 import { QuizService } from 'src/app/services/quiz.service';
 import { ApiService } from 'src/app/services/backend.service'; //API
-import { cs } from 'chart.js/dist/chunks/helpers.core';
 
 @Component({
   selector: 'app-quiz-result',
@@ -160,17 +159,16 @@ export class QuizResultPage implements OnInit {
 
   nextPage() {
     this._serv.deleteFields();
-    console.log("")
- console.log("----------------boton continuar----------")
+    console.log('');
+    console.log('----------------boton continuar----------');
     ///lamada a la api
     let body = {
-      
       name: 'Electromagnetismo_1',
       score: this.correctAnswerPorCentual,
       type: 'quiz',
       status: false,
     };
-    console.log("body",body);
+    console.log('body', body);
     this.saveResult(body);
   }
 }

@@ -1,0 +1,150 @@
+<app-header [back]="true" headerText="Examen"></app-header>
+
+<ion-content>
+  <ion-grid style="margin-top: 7%">
+    <!-- <ion-row style="margin-left: 2.5%">
+      <h4>¿Qué es la electrostática?</h4>
+    </ion-row> -->
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin: 0">
+        1- Si en un punto determinado de una región del espacio, el vector
+        intensidad del campo electrostático es nulo, ¿quiere decir que no existe
+        campo electrostático? Explique
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify1"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 15%">
+      <h6 style="margin: 0">
+        2- El campo electrostático ejerce fuerza sobre los cuerpos cargados y
+        puede provocar el desplazamiento de estos, el campo electrostático
+        realiza trabajo mecánico sobre los cuerpos electrizados.
+      </h6>
+    </ion-row>
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        a) ¿Qué significa que el campo electrostático sea conservativo?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify2"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        b) Si el trabajo es positivo, ¿la carga se mueve a favor o en contra de
+        la fuerza electrostática?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify3"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        c) Si el campo electrostático realiza un trabajo positivo, ¿la energía
+        potencial electrostática aumenta o disminuye?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify3"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        d) ¿Cómo determinar el potencial electrostático en un campo eléctrico
+        uniforme o no uniforme?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify4"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 15%">
+        3- Moviéndose en un campo eléctrico, un electrón pasa de un punto a otro
+        cuyo potencial es superior en 1V. ¿En cuánto vario su energía potencial?
+        ¿En cuánto vario la energía cinética?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify5"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 15%">
+        4- Dos condensadores de diferentes capacidades (C1>C2) están conectados
+        en paralelo. ¿Cuál de los dos posee mayor energía si se conectan a una
+        batería de diferencia de potencial dada?
+      </h6>
+    </ion-row>
+
+    <ion-row style="padding-bottom: 10%; margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify6"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <div class="login_buttons">
+      <div class="one_button">
+        <p-button (onClick)="nextPage()" label="Terminar examen"></p-button>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>

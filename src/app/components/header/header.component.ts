@@ -43,6 +43,21 @@ export class HeaderComponent implements OnInit {
         animated: true,
         animationDirection: 'back',
       });
+    } else if (this._location.isCurrentPathEqualTo('/exam-elect')) {
+      this.navCon.navigateRoot('/autoexamen', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/exam-circu')) {
+      this.navCon.navigateRoot('/autoexamen', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    } else if (this._location.isCurrentPathEqualTo('/exam-magne')) {
+      this.navCon.navigateRoot('/autoexamen', {
+        animated: true,
+        animationDirection: 'back',
+      });
     } else if (this._location.isCurrentPathEqualTo('/quiz')) {
       this.navCon.navigateRoot('/simulaciones/0', {
         animated: true,

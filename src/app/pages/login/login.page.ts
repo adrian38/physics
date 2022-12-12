@@ -81,21 +81,26 @@ export class LoginPage implements OnInit {
   }
 
   checkUser() {
-    this.loading.dismiss();
     this.user = this._apiService.getUser();
     if (this.user.type === 'Estudiante') {
+      if (this.loading) {
+        this.loading.dismiss();
+      }
       this.navController.navigateRoot('/home', {
         animated: true,
         animationDirection: 'forward',
       });
     } else {
+      if (this.loading) {
+        this.loading.dismiss();
+      }
       this.btn_disabled = false;
       this.showAlertProfesor();
     }
   }
 
   onSubmit() {
-    console.log(this.user, 'user');
+    // console.log(this.user, 'user');
     this.login(this.user.username, this.user.password);
   }
 

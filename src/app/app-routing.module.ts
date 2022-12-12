@@ -149,7 +149,19 @@ const routes: Routes = [
         (m) => m.ProgresoPageModule
       ),
     canActivate: [AuthGuardService],
+  },  {
+    path: 'exam-elect',
+    loadChildren: () => import('./pages/exam-elect/exam-elect.module').then( m => m.ExamElectPageModule)
   },
+  {
+    path: 'exam-circu',
+    loadChildren: () => import('./pages/exam-circu/exam-circu.module').then( m => m.ExamCircuPageModule)
+  },
+  {
+    path: 'exam-magne',
+    loadChildren: () => import('./pages/exam-magne/exam-magne.module').then( m => m.ExamMagnePageModule)
+  },
+
 ];
 
 @NgModule({

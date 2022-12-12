@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
-import { cs } from 'chart.js/dist/chunks/helpers.core';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
