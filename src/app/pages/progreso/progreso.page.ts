@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, Platform } from '@ionic/angular';
+import { AlertController, LoadingController, NavController, Platform } from '@ionic/angular';
+import { ApiService } from 'src/app/services/backend.service';
 import data from '../../utils/data-user.json';
+
 
 @Component({
   selector: 'app-progreso',
@@ -8,29 +10,98 @@ import data from '../../utils/data-user.json';
   styleUrls: ['./progreso.page.scss'],
 })
 export class ProgresoPage implements OnInit {
-  options: any = data;
+  user:any;
+  options: any[]=[];
   data: any;
-  constructor(public navCtrl: NavController, private platform: Platform) {
-    let temp: any[] = [];
-    let temp_notes: any[] = [];
+  loading: HTMLIonLoadingElement = null; ///API
+  temp: any[] = [];
+  temp_notes: any[] = [];
 
-    for (let element of this.options.quiz[0].nota) {
-      temp.push(element.intento.toString());
-      temp_notes.push(element.value);
+
+  constructor(public navCtrl: NavController, 
+    private platform: Platform,
+    public alertController: AlertController, ///API
+    public loadingController: LoadingController, ///API
+    private _apiService: ApiService ///API
+    ) {
+    
+
+      
+    
+    
+  }
+
+  async showLoading(message: string) {
+    this.loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: message,
+    });
+
+    return this.loading.present();
+  }
+
+  async getResult() {
+    this.showLoading('Cargando resultados');
+
+    try {
+      this.options = await  this._apiService.getExamResults()
+      for (let element of this.options) {
+        this.temp.push(element.intents_number.toString());
+        this.temp_notes.push(element.score);
+      }
+  
+      this.data = {
+        labels: this.temp,
+        datasets: [
+          {
+            label: 'Intentos',
+            data: this.temp_notes,
+          },
+        ],
+      };
+      console.log(this.options,"info")
+      
+      
+    } catch (err) {
+      this.showAlert();
+      console.log('============= err =============');
+      console.log(err);
     }
+    this.loading.dismiss();
+  }
 
-    this.data = {
-      labels: temp,
-      datasets: [
+  async showAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Error conectividad',
+      message: 'Si el problema persiste contactar con la administración',
+      buttons: [
         {
-          label: 'Intentos',
-          data: temp_notes,
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          //handler: () => {},
+        },
+        {
+          text: 'Continuar',
+          handler: () => {
+            this.navCtrl.navigateRoot('/simulaciones/0', {
+              animated: true,
+              animationDirection: 'forward',
+            });
+          },
         },
       ],
-    };
+    });
+
+    await alert.present();
   }
 
   ngOnInit() {
+    this.user=this._apiService.getUser();
+
+     this.getResult();
+    
     this.platform.backButton.subscribeWithPriority(10, () => {
       this.navCtrl.navigateRoot('/home', {
         animated: true,

@@ -160,14 +160,17 @@ export class QuizResultPage implements OnInit {
 
   nextPage() {
     this._serv.deleteFields();
-
+    console.log("")
+ console.log("----------------boton continuar----------")
     ///lamada a la api
     let body = {
+      
       name: 'Electromagnetismo_1',
       score: this.correctAnswerPorCentual,
       type: 'quiz',
       status: false,
     };
-    this._apiService.saveExamResults(body);
+    console.log("body",body);
+    this.saveResult(body);
   }
 }
