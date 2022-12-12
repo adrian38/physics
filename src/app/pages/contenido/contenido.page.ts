@@ -20,7 +20,7 @@ export class ContenidoPage implements OnInit {
     });
   }
   routeTopage(element: number) {
-    if (element === 1 || element === 2) {
+    if (element === 2) {
     } else {
       this.navCtrl.navigateRoot(
         `/${this.options[element].toLocaleLowerCase()}`,

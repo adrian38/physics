@@ -33,6 +33,7 @@ export class ApiService {
 
             if (data.length > 0) {
               this.user.username = data[0].email;
+              this.user.group = data[0].group;
               this.user.name = data[0].full_name;
               this.user.id = data[0].id;
               this.user.phone = data[0].phone_number;
