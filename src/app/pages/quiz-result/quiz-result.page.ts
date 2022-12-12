@@ -32,7 +32,7 @@ export class QuizResultPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
-    private platform: Platform,
+    // private platform: Platform,
     private _serv: QuizService,
     public alertController: AlertController, ///API
     public loadingController: LoadingController, ///API
@@ -57,7 +57,7 @@ export class QuizResultPage implements OnInit {
       }
     }
 
-    this.correctAnswer = 7;
+    // this.correctAnswer = 7;
 
     this.correctAnswerGraph = [
       { name: 'Correctas', value: this.correctAnswer },

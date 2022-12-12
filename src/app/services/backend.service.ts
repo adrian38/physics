@@ -52,17 +52,37 @@ export class ApiService {
   }
 
   async saveExamResults(body: any): Promise<any> {
-    // console.log('body', body);
     return new Promise<boolean>(async (resolve, reject) => {
       let postParams = {
         id_student: this.user.id,
       };
 
       let final = { ...postParams, ...body };
-      // console.log('final', final);
+      console.log('final', final);
       try {
         this.http
           .post(`${this.url_server}/exam`, final)
+          .subscribe(async (data: any) => {
+            if (data) {
+              console.log(data, 'id del examen');
+              resolve(data);
+            } else {
+              resolve(false);
+            }
+          });
+      } catch (err) {
+        console.log('************* err *************');
+        console.log(err);
+      }
+    });
+  }
+
+  async saveScoreResults(body: any): Promise<any> {
+    return new Promise<boolean>(async (resolve, reject) => {
+      console.log('score', body);
+      try {
+        this.http
+          .post(`${this.url_server}/score`, body)
           .subscribe(async (data: any) => {
             resolve(true);
             /*  if (data) {
