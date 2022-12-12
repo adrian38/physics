@@ -27,13 +27,14 @@ export class QuizElect15Page implements OnInit {
     });
   }
 
-  setAnswer() {
+  setAnswer(value: string) {
     console.log('************* radio button *************');
-    console.log();
-    this._serv.setQuestion7(this.question7);
+    console.log(value);
+    this._serv.setQuestion7(value);
   }
 
   nextPage() {
+    this._serv.setQuestion7(this.question7);
     this.navCtrl.navigateRoot(`/lottie`, {
       // animated: true,
       // animationDirection: 'forward',
