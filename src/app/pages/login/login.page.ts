@@ -37,11 +37,7 @@ export class LoginPage implements OnInit {
 
     try {
       if (await this._apiService.login(email, password)) {
-        console.log('************* navigating home *************');
-        this.navController.navigateRoot('/home', {
-          animated: true,
-          animationDirection: 'forward',
-        });
+        this.checkUser();
       } else {
         this.btn_disabled = false;
         this.showAlert();
@@ -49,8 +45,6 @@ export class LoginPage implements OnInit {
     } catch (err) {
       this.btn_disabled = false;
       this.showAlert();
-      console.log('============= err =============');
-      console.log(err);
     }
     this.loading.dismiss();
   }
@@ -86,12 +80,19 @@ export class LoginPage implements OnInit {
       });
   }
 
-  // checkUser() {
-  //   this.navController.navigateRoot('/home', {
-  //     animated: true,
-  //     animationDirection: 'forward',
-  //   });
-  // }
+  checkUser() {
+    this.loading.dismiss();
+    this.user = this._apiService.getUser();
+    if (this.user.type === 'Estudiante') {
+      this.navController.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'forward',
+      });
+    } else {
+      this.btn_disabled = false;
+      this.showAlertProfesor();
+    }
+  }
 
   onSubmit() {
     console.log(this.user, 'user');
@@ -105,10 +106,26 @@ export class LoginPage implements OnInit {
       message: 'Si el problema persiste contactar con la administración',
       buttons: [
         {
-          text: 'Cancelar',
+          text: 'Cerrar',
           role: 'cancel',
           cssClass: 'secondary',
-          //handler: () => {},
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  async showAlertProfesor() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Por favor utilice la aplicacion de profesor',
+      message: 'Si el problema persiste contactar con la administración',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'cancel',
+          cssClass: 'secondary',
         },
       ],
     });
