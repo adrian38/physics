@@ -25,13 +25,17 @@
             type="password"
             name="password"
             [(ngModel)]="user.password"
-            minlength="5"
+            minlength="3"
             placeholder="CONTRASEÑA"
             required
           >
           </ion-input>
 
-          <p-button type="submit" label="INICIAR SESIÓN"></p-button>
+          <p-button
+            [disabled]="invalid_form.invalid || btn_disabled"
+            type="submit"
+            label="INICIAR SESIÓN"
+          ></p-button>
         </form>
       </div>
 

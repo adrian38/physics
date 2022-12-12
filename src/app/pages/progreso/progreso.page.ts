@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, LoadingController, NavController, Platform } from '@ionic/angular';
+import {
+  AlertController,
+  LoadingController,
+  NavController,
+  Platform,
+} from '@ionic/angular';
+import { UsuarioModel } from 'src/app/models/usuario.model';
 import { ApiService } from 'src/app/services/backend.service';
-import data from '../../utils/data-user.json';
-
+// import data from '../../utils/data-user.json';
 
 @Component({
   selector: 'app-progreso',
@@ -10,26 +15,37 @@ import data from '../../utils/data-user.json';
   styleUrls: ['./progreso.page.scss'],
 })
 export class ProgresoPage implements OnInit {
-  user:any;
-  options: any[]=[];
+  user = new UsuarioModel();
+  options: any[] = [];
   data: any;
   loading: HTMLIonLoadingElement = null; ///API
   temp: any[] = [];
   temp_notes: any[] = [];
+<<<<<<< HEAD
   exam_name:any[]=[];
+=======
+  temp_name: any[] = [];
+>>>>>>> omittLottie
 
-
-  constructor(public navCtrl: NavController, 
+  constructor(
+    public navCtrl: NavController,
     private platform: Platform,
     public alertController: AlertController, ///API
     public loadingController: LoadingController, ///API
     private _apiService: ApiService ///API
-    ) {
-    
+  ) {
+    this.user = this._apiService.getUser();
+  }
 
-      
-    
-    
+  ngOnInit() {
+    this.getResult();
+
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
   }
 
   async showLoading(message: string) {
@@ -45,13 +61,17 @@ export class ProgresoPage implements OnInit {
     this.showLoading('Cargando resultados');
 
     try {
-      this.options = await  this._apiService.getExamResults()
+      this.options = await this._apiService.getExamResults();
       for (let element of this.options) {
         this.temp.push(element.intents_number.toString());
         this.temp_notes.push(element.score);
+<<<<<<< HEAD
         this.exam_name.push(element.name);
+=======
+        this.temp_name.push(element.name);
+>>>>>>> omittLottie
       }
-  
+
       this.data = {
         labels: this.temp,
         datasets: [
@@ -61,9 +81,7 @@ export class ProgresoPage implements OnInit {
           },
         ],
       };
-      console.log(this.options,"info")
-      
-      
+      console.log(this.options, 'info');
     } catch (err) {
       this.showAlert();
       console.log('============= err =============');
@@ -97,18 +115,5 @@ export class ProgresoPage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  ngOnInit() {
-    this.user=this._apiService.getUser();
-
-     this.getResult();
-    
-    this.platform.backButton.subscribeWithPriority(10, () => {
-      this.navCtrl.navigateRoot('/home', {
-        animated: true,
-        animationDirection: 'back',
-      });
-    });
   }
 }

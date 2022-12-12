@@ -2,7 +2,7 @@
 <ion-content [fullscreen]="true">
   <div style="padding: 5%; padding-top: 10%">
     <ion-row>
-      <h2>{{this.user.full_name}}</h2>
+      <h2>{{this.user.name}}</h2>
     </ion-row>
 
     <ion-row>
@@ -18,7 +18,7 @@
         <h3>teléfono:</h3>
       </ion-col>
       <ion-col size="8">
-        <h4>{{this.user.phone_number}}</h4>
+        <h4>{{this.user.phone}}</h4>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -26,12 +26,16 @@
         <h3>correo:</h3>
       </ion-col>
       <ion-col size="8">
-        <h4>{{this.user.email}}</h4>
+        <h4>{{this.user.username}}</h4>
       </ion-col>
     </ion-row>
     <div style="margin-top: 20%">
       <ion-row>
+<<<<<<< HEAD
         <h4>{{this.exam_name[0]}}</h4>
+=======
+        <h4>{{ this.temp_name[0]}}</h4>
+>>>>>>> omittLottie
       </ion-row>
       <p-chart type="line" [data]="data"></p-chart>
     </div>

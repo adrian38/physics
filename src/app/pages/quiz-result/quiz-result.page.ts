@@ -8,6 +8,7 @@ import {
 
 import { QuizService } from 'src/app/services/quiz.service';
 import { ApiService } from 'src/app/services/backend.service'; //API
+import { cs } from 'chart.js/dist/chunks/helpers.core';
 
 @Component({
   selector: 'app-quiz-result',
@@ -39,9 +40,9 @@ export class QuizResultPage implements OnInit {
     private _apiService: ApiService ///API
   ) {
     this.quiz = this._serv.getQuiz();
-    // this.total = 7;
+    this.total = 7;
 
-    this.total = this.quiz.answer.length;
+    // this.total = this.quiz.answer.length;
 
     this.result.push(this._serv.getQuestion1());
     this.result.push(this._serv.getQuestion2());
@@ -57,7 +58,8 @@ export class QuizResultPage implements OnInit {
       }
     }
 
-    // this.correctAnswer = 5;
+    this.correctAnswer = 7;
+
     this.correctAnswerGraph = [
       { name: 'Correctas', value: this.correctAnswer },
     ];
@@ -65,7 +67,7 @@ export class QuizResultPage implements OnInit {
     this.temp = (this.correctAnswer / this.quiz.answer.length) * 100;
     this.correctAnswerPorCentual = Math.round(this.temp);
 
-    // this.correctAnswerPorCentual = 100;
+    this.correctAnswerPorCentual = 100;
 
     if (this.correctAnswerPorCentual === 100) {
       this.text = 'EXCELENTE';
@@ -92,7 +94,7 @@ export class QuizResultPage implements OnInit {
       console.log(this.text);
     }
     // this.text_3 = '100%';
-    this.text_3 = this.correctAnswerPorCentual.toString() + '%';
+    // this.text_3 = this.correctAnswerPorCentual.toString() + '%';
   }
 
   ngOnInit() {}
