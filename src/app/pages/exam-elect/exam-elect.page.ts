@@ -3,9 +3,9 @@ import {
   AlertController,
   LoadingController,
   NavController,
+  Platform,
 } from '@ionic/angular';
 import { ApiService } from 'src/app/services/backend.service';
-import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-exam-elect',
@@ -20,13 +20,20 @@ export class ExamElectPage implements OnInit {
 
   constructor(
     public navCtrl: NavController,
-    private _serv: QuizService,
     public alertController: AlertController, ///API
     public loadingController: LoadingController, ///API
-    private _apiService: ApiService ///API
+    private _apiService: ApiService, ///API
+    private platform: Platform
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      this.navCtrl.navigateRoot('/autoexamen', {
+        animated: true,
+        animationDirection: 'back',
+      });
+    });
+  }
 
   async showLoading(message: string) {
     this.loading = await this.loadingController.create({

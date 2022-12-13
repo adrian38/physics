@@ -101,7 +101,7 @@ export class ApiService {
   async getExamResults(): Promise<any> {
     return new Promise<any>(async (resolve, reject) => {
       this.http
-        .get(`${this.url_server}/exam/${this.user.id}`)
+        .get(`${this.url_server}/exam/test/unchecked/${this.user.id}`)
         .subscribe(async (data: any) => {
           if (data) {
             resolve(data);

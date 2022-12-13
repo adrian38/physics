@@ -1,9 +1,170 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>exam-magne</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [back]="true" headerText="Examen"></app-header>
 
 <ion-content>
+  <ion-grid style="margin-top: 7%">
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin: 0">
+        1- Conociendo la dirección y el sentido de la inducción magnética en una
+        región, y el sentido de la velocidad de una partícula cargada en la
+        misma, ¿se podría con la regla de la mano derecha determinar el sentido
+        de la fuerza que actúa sobre la carga móvil? Explique.
+      </h6>
+    </ion-row>
 
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[0]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 15%">
+      <h6 style="margin: 0">
+        En una región del espacio donde existen al mismo tiempo un campo
+        eléctrico y un campo magnético uniforme, se mueve un electrón por una
+        trayectoria rectilínea. Se conoce que la intensidad del campo eléctrico
+        es igual a E ⃗. Explique cuál debe ser el valor de la inducción
+        magnética (B ⃗) del campo magnético, para que el electrón no se desvíe
+        de su trayectoria rectilínea, si:
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        a) ¿Qué significa que el campo electrostático sea conservativo?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[1]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        b) la dirección de la velocidad es perpendicular a las direcciones de E
+        y de B, que a su vez son perpendiculares entre sí.
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[2]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 15%">
+        3- Una barra imantada cae a través de una espira metálica circular.
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        a) Describe las variaciones, en magnitud y dirección, de la corriente
+        inducida en la espira cuando el imán cae a través de ella.
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[3]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        b) Despreciando la resistencia del aire, ¿será constante la aceleración
+        de la barra imantada durante su caída?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[4]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 15%">
+        4- Un anillo conductor es colocado frente a un imán en movimiento
+        respecto al mismo, como se muestra en la figura.
+      </h6>
+    </ion-row>
+
+    <ion-row
+      class="zoom"
+      style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%"
+    >
+      <img src="assets/images/magne1.png" />
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        a) ¿Hacia dónde se debe mover el imán, para que en el anillo se induzca
+        una corriente en el sentido señalado: hacia la derecha, hacia la
+        izquierda, hacia abajo o hacia arriba? ¿Por qué?
+      </h6>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[5]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin-top: 5%">
+        b) ¿Cómo varia la fem inducida en el anillo, si se aumenta la rapidez de
+        la variación del flujo magnético? Justifique.
+      </h6>
+    </ion-row>
+
+    <ion-row style="padding-bottom: 10%; margin-left: 1.5%; margin-right: 1.5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[6]"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <div class="login_buttons">
+      <div class="one_button">
+        <p-button (onClick)="nextPage()" label="Terminar examen"></p-button>
+      </div>
+    </div>
+  </ion-grid>
 </ion-content>

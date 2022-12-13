@@ -8,6 +8,7 @@ import { ExamCircuPageRoutingModule } from './exam-circu-routing.module';
 
 import { ExamCircuPage } from './exam-circu.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     IonicModule,
     ExamCircuPageRoutingModule,
     ComponentsModule,
+    ButtonModule,
   ],
   declarations: [ExamCircuPage],
 })

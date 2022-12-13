@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { ExamMagnePageRoutingModule } from './exam-magne-routing.module';
 
 import { ExamMagnePage } from './exam-magne.page';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExamMagnePageRoutingModule
+    ExamMagnePageRoutingModule,
+    ComponentsModule,
+    ButtonModule,
   ],
-  declarations: [ExamMagnePage]
+  declarations: [ExamMagnePage],
 })
 export class ExamMagnePageModule {}

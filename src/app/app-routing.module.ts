@@ -94,6 +94,7 @@ const routes: Routes = [
     path: 'quiz',
     loadChildren: () =>
       import('./pages/quiz/quiz.module').then((m) => m.QuizPageModule),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-elect1',
@@ -101,6 +102,7 @@ const routes: Routes = [
       import('./pages/quiz-elect1/quiz-elect1.module').then(
         (m) => m.QuizElect1PageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-elect12',
@@ -108,6 +110,7 @@ const routes: Routes = [
       import('./pages/quiz-elect12/quiz-elect12.module').then(
         (m) => m.QuizElect12PageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-elect13',
@@ -115,6 +118,7 @@ const routes: Routes = [
       import('./pages/quiz-elect13/quiz-elect13.module').then(
         (m) => m.QuizElect13PageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-elect14',
@@ -122,6 +126,7 @@ const routes: Routes = [
       import('./pages/quiz-elect14/quiz-elect14.module').then(
         (m) => m.QuizElect14PageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-elect15',
@@ -129,6 +134,7 @@ const routes: Routes = [
       import('./pages/quiz-elect15/quiz-elect15.module').then(
         (m) => m.QuizElect15PageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'quiz-result',
@@ -136,11 +142,13 @@ const routes: Routes = [
       import('./pages/quiz-result/quiz-result.module').then(
         (m) => m.QuizResultPageModule
       ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'lottie',
     loadChildren: () =>
       import('./shared/lottie/lottie.module').then((m) => m.LottiePageModule),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'progreso',
@@ -149,19 +157,38 @@ const routes: Routes = [
         (m) => m.ProgresoPageModule
       ),
     canActivate: [AuthGuardService],
-  },  {
+  },
+  {
     path: 'exam-elect',
-    loadChildren: () => import('./pages/exam-elect/exam-elect.module').then( m => m.ExamElectPageModule)
+    loadChildren: () =>
+      import('./pages/exam-elect/exam-elect.module').then(
+        (m) => m.ExamElectPageModule
+      ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'exam-circu',
-    loadChildren: () => import('./pages/exam-circu/exam-circu.module').then( m => m.ExamCircuPageModule)
+    loadChildren: () =>
+      import('./pages/exam-circu/exam-circu.module').then(
+        (m) => m.ExamCircuPageModule
+      ),
+    canActivate: [AuthGuardService],
   },
   {
     path: 'exam-magne',
-    loadChildren: () => import('./pages/exam-magne/exam-magne.module').then( m => m.ExamMagnePageModule)
+    loadChildren: () =>
+      import('./pages/exam-magne/exam-magne.module').then(
+        (m) => m.ExamMagnePageModule
+      ),
   },
-
+  {
+    path: 'imagenmodal',
+    loadChildren: () =>
+      import('./pages/imagenmodal/imagenmodal.module').then(
+        (m) => m.ImagenmodalPageModule
+      ),
+    canActivate: [AuthGuardService],
+  },
 ];
 
 @NgModule({

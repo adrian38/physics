@@ -2,25 +2,159 @@
 
 <ion-content>
   <ion-grid style="margin-top: 7%">
-    <ion-row style="margin-left: 2.5%">
-      <h4>¿Qué es la electrostática?</h4>
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%">
+      <h6 style="margin: 0">
+        1. Dado el circuito a continuación, determine cuál es la bombilla que
+        brilla con más intensidad y por que
+      </h6>
+    </ion-row>
+    <ion-row
+      class="zoom"
+      style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%"
+    >
+      <img
+        (click)="imageClick('assets/images/circu1.png')"
+        src="assets/images/circu1.png"
+      />
+    </ion-row>
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[0].justify"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
     </ion-row>
 
-    <ion-row style="margin-left: 2.5%">
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 10%">
       <h6 style="margin: 0">
-        La electrostática es la rama de la Física que analiza los efectos mutuos
-        que se producen entre los cuerpos como consecuencia de sus cargas
-        eléctricas, es decir, el estudio de las cargas eléctricas en equilibrio.
-        La carga eléctrica es la propiedad de la materia responsable de los
-        fenómenos electrostáticos, cuyos efectos aparecen en forma de
-        atracciones y repulsiones entre los cuerpos que la poseen.
-      </h6>
-      <br />
-      <h6 style="margin: 0">
-        El objeto de estudio de la electrostática es la electricidad estática,
-        definida como el fenómeno producido entre dos cuerpos que han acumulado
-        una carga eléctrica, ya sea por inducción o por fricción.
+        2. Explique las causas por la cual en el siguiente circuito no circula
+        corriente en el segmento que contiene la bombilla y el interruptor
       </h6>
     </ion-row>
+    <ion-row
+      class="zoom"
+      style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%"
+    >
+      <img
+        (click)="imageClick('assets/images/circu2.png')"
+        src="assets/images/circu2.png"
+      />
+    </ion-row>
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[1].justify"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 10%">
+      <h6 style="margin: 0">
+        3. En la imagen hay un circuito con tres baterías de 9V cada una y tres
+        bombillas con una resistencia de 10 ohm, los interruptores están
+        accionados y no se aprecia el paso de la corriente. ¿Por qué no funciona
+        el circuito? Justifique su selección. Nota: La resistencia de los cables
+        se considera despreciable respecto a la de las bombillas
+      </h6>
+    </ion-row>
+    <ion-row
+      class="zoom"
+      style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%"
+    >
+      <img
+        (click)="imageClick('assets/images/circu3.png')"
+        src="assets/images/circu3.png"
+      />
+    </ion-row>
+    <ion-list style="margin-top: 5%">
+      <ion-radio-group [(ngModel)]="justify[2].answer">
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >Los componentes están mal conectados</ion-label
+          >
+
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >El circuito necesita resistencias</ion-label
+          >
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >La disposición de las polaridades de las baterías impide el paso de
+            los electrones</ion-label
+          >
+          <ion-radio slot="start" value="3"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="white-space: normal"
+            >El voltaje de las baterías no es suficiente para alimentar el
+            circuito</ion-label
+          >
+          <ion-radio slot="start" value="4"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%">
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[2].justify"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <ion-row style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 10%">
+      <h6 style="margin: 0">
+        4. El siguiente circuito consta de una batería de 9V y cuatro bombillas
+        de 10 ohm. Determine que corriente debe entregar la batería para que las
+        bombillas sean alimentadas con una corriente de 0.9A
+      </h6>
+    </ion-row>
+    <ion-row
+      class="zoom"
+      style="margin-left: 1.5%; margin-right: 1.5%; margin-top: 5%"
+    >
+      <img
+        (click)="imageClick('assets/images/circu4.png')"
+        src="assets/images/circu4.png"
+      />
+    </ion-row>
+    <ion-row
+      style="
+        padding-bottom: 10%;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        margin-top: 5%;
+      "
+    >
+      <textarea
+        name="Text1"
+        cols="30"
+        rows="5"
+        [(ngModel)]="justify[3].justify"
+        placeholder="Explique"
+        style="max-width: 100%; width: 100%; flex: 100%; padding: 10px"
+      ></textarea>
+    </ion-row>
+
+    <div class="login_buttons">
+      <div class="one_button">
+        <p-button (onClick)="nextPage()" label="Terminar examen"></p-button>
+      </div>
+    </div>
   </ion-grid>
 </ion-content>

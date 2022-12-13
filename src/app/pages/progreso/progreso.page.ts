@@ -59,9 +59,11 @@ export class ProgresoPage implements OnInit {
     try {
       this.options = await this._apiService.getExamResults();
       for (let element of this.options) {
-        this.temp.push(element.intents_number.toString());
-        this.temp_notes.push(element.score);
-        this.temp_name.push(element.name);
+        if (!element.status) {
+          this.temp.push(element.intents_number.toString());
+          this.temp_notes.push(element.score);
+          this.temp_name.push(element.name);
+        }
       }
 
       this.data = {

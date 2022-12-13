@@ -1,0 +1,54 @@
+textarea {
+  /*  border: 1px solid  rgb(246, 183, 118);  */
+  border: 1px transparent;
+  height: 200px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: rgb(245, 245, 245);
+  padding: 0px;
+}
+textarea:focus-within {
+  border: 0px solid transparent;
+  /* border: 1px solid  transparent; */
+  height: 200px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: rgb(245, 245, 245);
+  padding: 0px;
+  outline: none;
+}
+:host ::ng-deep .login_buttons {
+  width: 80%;
+  margin-left: 10%;
+  //   position: absolute;
+  padding-bottom: 5%;
+
+  .one_button {
+    width: 100%;
+    //padding-top: 15%;
+    padding-top: 5%;
+
+    .p-button {
+      margin-top: 10%;
+      span {
+        padding-top: 5px;
+        font: normal 15px "Helvetica-Md", sans-serif !important;
+      }
+
+      color: rgb(49, 49, 57);
+      border: solid var(--ion-color-primary);
+      background: var(--ion-color-primary);
+      width: 100%;
+    }
+
+    .p-button:focus {
+      box-shadow: none !important;
+    }
+  }
+}
+// .zoom {
+//   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+//     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+// }
