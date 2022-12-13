@@ -1,3 +1,285 @@
 <app-header [back]="true" headerText="Corriente"></app-header>
+<ion-content>
+    <ion-grid style="margin-top: 7%">
+      <ion-row style="margin-left: 2.5%">
+        <h4>Corriente eléctrica y circuitos</h4>
+    </ion-row>
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            <ul>
+            <li>Corriente eléctrica. Introducción a los circuitos</li>
+            <li>FEM y Diferencia de potencial </li>
+            <li>Resistencia eléctrica y Ley de Ohm.  </li>
+            <li>La corriente eléctrica se define como el movimiento
+             ordenado de portadores de carga en un medio conductor,
+             dígase iones en una disolución o electrones en un conductor metálico.</li>
+            </ul>
+        </h6>
+        <h6 style="margin: 0">
+            Se define como “intensidad de la corriente” la relación entre la carga 
+            que atraviesa la sección transversal de un conductor y el intervalo de 
+            tiempo que tarda en hacerlo. 
+        </h6>
+    </ion-row>
+    <ion-row style="padding: 5%">
+        <img class="zoom" src="assets/images/corr1.png" />
+      </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            En el caso de la corriente eléctrica continua,
+            la intensidad de la corriente no varía con el 
+            tiempo.[LT onceno]
+        </h6>
+    </ion-row> 
+    <br />
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                La intensidad de la corriente es una magnitud escalar,
+                por razones históricas se toma convencionalmente como 
+                sentido de la corriente el que tendrían los portadores
+                de carga eléctrica positiva. En un circuito se toma 
+                generalmente el sentido de la corriente eléctrica es 
+                del polo positivo de la fuente al polo negativo.
+            </h6>    
+        </ion-row>   
+        <br />
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                La intensidad de corriente se mide en 
+                ampere (A), 1A = 1C/s, en el Sistema 
+                Internacional de unidades. Usualmente se
+                utilizan unidades menores, como el 
+                miliampere (mA). 
+            </h6>    
+        </ion-row>    
+        <br />
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                Todas las instalaciones eléctricas, 
+                desde la utilizada para encender un 
+                bombillo de una linterna, hasta otras
+                más complejas, como la empleada para 
+                transmitir la energía eléctrica generada
+                en las centrales y transformarlas para 
+                hacer utilizada en los equipos, están
+                compuestos por sistemas de dispositivos 
+                conectados entre sí. Tales sistemas se 
+                denominan circuitos eléctricos.
+            </h6>    
+        </ion-row> 
+        <br />
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                Un circuito eléctrico es un conjunto de 
+                componentes eléctricos conectados entre
+                sí formando una trayectoria cerrada.
+            </h6>    
+        </ion-row> 
+        <br />
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                Todo circuito eléctrico tiene cuatro elementos básicos:
+            </h6>    
+        </ion-row> 
+        
+        <ion-row style="margin-left: 2.5%">
+            <h6 style="margin: 0">
+                <ol>
+                <li> generador o fuente de electricidad,</li> 
+                <li> conductores y otros dispositivos para la transmisión de la energía eléctrica (cables)</li>
+                <li> receptores (bombillos, bocina)</li> 
+                <li> dispositivos de control (interruptor)</li> 
+             </ol>
+            </h6> 
+        </ion-row>
+            <ion-row style="margin-left: 2.5%">
+                <h6 style="margin: 0">
+                    <ul>
+                    <li>  Para que exista una corriente eléctrica, es decir, 
+                        que a pesar del movimiento de las partículas con carga 
+                        eléctrica, estas se mueven de conjunto en una dirección 
+                        específica es necesaria la existencia de un campo eléctrico
+                         que actúe sobre los portadores de carga del conductor,
+                         una fuerza constante en determinado sentido, por tanto,
+                        una diferencia de potencial constante aplicada a los extremos
+                         del conductor. En todo circuito debe existir un componente 
+                         que ceda energía para sostener la diferencia de potencial requerida.
+                         A estos componentes se le conoce como fuente y puede ser una batería,
+                         un dinamo, una celda solar, entre otros. La función de las fuentes
+                         o generadores es producir un exceso de carga eléctrica en una parte del
+                         circuito respecto a otra, provocando así un campo eléctrico a través de él. 
+                         Es, además, restablecer continuamente la energía potencial eléctrica que
+                         constantemente pasa a otra forma en los receptores. Es importante destacar que,
+                         en un circuito, además de actuar fuerzas de naturaleza coulombiana, las 
+                         fuerzas que mueven los portadores de carga dentro de la fuente son de naturaleza 
+                         no coulombiana.</li> 
+                        </ul>
+                </h6>
+            </ion-row>
+            <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Para caracterizar las fuentes, se utiliza la fuerza electromotriz (FEM), su unidad de medida es el volt [V],
+            y se define como la relación que existe entre el trabajo realizado por las fuerzas no coulombianas al 
+            trasladar una partícula cargada con carga q0 a lo largo de un circuito, y el valor de dicha carga.
+        </h6>
+    </ion-row>
+    <ion-row style="padding: 5%">
+        <img class="zoom" src="assets/images/corr2.png" />
+      </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Al utilizar estos dispositivos para energizar los circuitos, le estamos suministrando corriente
+            directa, puesto que la polaridad en los terminales de la fuente no cambia y la corriente siempre
+            fluye en el mismo sentido. 
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Se hace necesario esclarecer las diferencias entre los conceptos de “diferencia de potencial” 
+            (voltaje) y “fuerza electromotriz” 
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            <ul>
+            <li>La fuerza electromotriz es la energía por unidad de carga obtenida a través de una fuente eléctrica o no eléctrica en un circuito. Por otro lado, la diferencia de potencial es la diferencia calculada de la cantidad de energía que se pasa de un punto a otro en un circuito.
+            </li>
+            <li>La fuerza electromotriz es inducida por celdas electroquímicas en la fuente o cambios en el campo magnético. Considerando que, la diferencia de potencial es causada por el viaje de electrones libres a través del conductor entre dos puntos.
+            </li>
+            <li>La resistencia eléctrica de un conductor es la oposición que presenta éste al paso de la corriente.
+           </li>
+        </ul>
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Es fácil comprobar experimentando con conductores de diferente naturaleza, longitud y sección 
+            transversal, que la resistencia depende de los siguientes factores:
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            <ul>
+            <li>De la naturaleza del conductor; unos materiales son mejores conductores que otros. 
+                Los mejores conductores son los metales y dentro de ellos la plata, aunque es poco 
+                utilizada debido a su elevado precio. El conductor más usado industrialmente es el 
+                cobre por su baja resistividad, precio más asequible y buena ductilidad. </li>
+            <li>Es directamente proporcional a su longitud  </li>
+            <li>Es inversamente proporcional a su sección.  </li>  
+            <li>Aumenta con la temperatura, aunque esta variación es pequeña y de poca importancia,
+                 salvo para aplicaciones específicas en las que esta característica sea especialmente relevante.  </li>        
+                </ul>
+                </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Según lo anterior, la resistencia de un conductor viene dada por la expresión:
+        </h6>
+    </ion-row>
+    <ion-row style="padding: 5%">
+        <img class="zoom" src="assets/images/corr3.png" />
+      </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Donde  es la resistividad que depende de la naturaleza del conductor 
+            y representa la resistencia de un conductor de 1 m de longitud y 1 m2 de sección.
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            La unidad de medida para la resistencia es el Ohm, representado por la letra
+             griega omega (Ω)
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Hasta ahora conocemos que las cargas se mueven debido a un voltaje 
+            o diferencia de potencial, por tanto, sería lógico pensar que cuanto 
+            mayor sea esta, mayor será la cantidad de carga que se mueve por unidad 
+            de tiempo y, por tanto, mayor será la intensidad de la corriente. Sin embargo,
+            cuanto mayor sea la resistencia del conductor, menor será la intensidad de
+            la corriente.
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            En 1826, Georg Simon Ohm, dio a conocer los resultados de sus investigaciones 
+            sobre la relación existente entre estas tres magnitudes.
+                </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            La intensidad de corriente que atraviesa un conductor es directamente proporcional
+             a la diferencia de potencial entre sus extremos e inversamente proporcional a la resistencia de éste.  
+                </h6>
+    </ion-row>
+    <ion-row style="padding: 5%">
+        <img class="zoom" src="assets/images/corr5.png" />
+      </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Al despejar la resistencia,  , obtenemos la definición de ohm. </h6>
+    </ion-row>
+    <ion-row style="padding: 5%">
+        <img class="zoom" src="assets/images/corr6.png" />
+      </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            En el caso de analizar el circuito, la expresión de la Ley de Ohm 
+            se modifica puesto que hay que tener en cuenta la FEM () y la resistencia 
+            interna del generador ()
+ </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Acá queda claro que la intensidad de la corriente en 
+            un circuito depende de tres factores: la fem, la resistencia
+             interna de la fuente (r) y de la resistencia externa (R).
+        </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Si la resistencia interna es pequeña en comparación con la 
+            externa (R>>r), no influye considerablemente sobre la intensidad
+             de la corriente, por lo que la tensión en los bornes de la fuente
+              es aproximadamente igual a la fuerza electromotriz.
+ </h6>
+    </ion-row>
+    <br />
+    <ion-row style="margin-left: 2.5%">
+        <h6 style="margin: 0">
+            Durante un cortocircuito (R->0) la intensidad de la 
+            corriente se determina específicamente por medio de la
+            resistencia interna de la fuente. En estos casos, 
+            I puede ser considerablemente grande, a pesar de 
+            que la fem sea de pocos volts. Para una r pequeña 
+            (0,001 <  r < 0,1 Ω), los conductores pueden fundirse
+            y la fuente, averiarse. Para fuentes con r más grande 
+            (107 < r < 108 Ω), tienes a su vez fem grande (104 V), 
+            por tanto, la intensidad de la corriente en el circuito es bastante pequeña. 
+        </h6>
+    </ion-row>
+
+
+
+
+            
 
 <ion-content> </ion-content>
