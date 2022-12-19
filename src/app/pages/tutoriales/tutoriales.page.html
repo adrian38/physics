@@ -2,8 +2,12 @@
 
 <ion-content>
   <ion-grid style="margin-top: 7%">
+    <ion-row style="margin-left: 2.5%" >
+      <h4 >{{options[id-1].name}}</h4>
+    </ion-row>
+  </ion-grid>  
     <ion-row style="margin-left: 2.5%">
-      <h4>{{options[id-1].tutorial_title}}</h4>
+      <h5>{{options[id-1].tutorial_title}}</h5>
     </ion-row>
     <ion-row style="margin-left: 2.5%; margin-bottom: 10%">
       <u style="margin-bottom: 0">Objetivo</u>
@@ -16,6 +20,6 @@
         {{line}}
       </h6>
     </ion-row>
-  </ion-grid>
+  
   <app-card-pre [simulation_pre]="options[id-1]"></app-card-pre>
 </ion-content>

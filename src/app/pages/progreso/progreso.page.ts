@@ -22,6 +22,7 @@ export class ProgresoPage implements OnInit {
   temp: any[] = [];
   temp_notes: any[] = [];
   temp_name: any[] = [];
+  temp_intents_number: any[] = [];
 
   constructor(
     public navCtrl: NavController,
@@ -63,14 +64,15 @@ export class ProgresoPage implements OnInit {
           this.temp.push(element.intents_number.toString());
           this.temp_notes.push(element.score);
           this.temp_name.push(element.name);
+          this.temp_intents_number.push(element.intents_number);
         }
       }
 
       this.data = {
-        labels: this.temp,
+        labels: this.temp_intents_number,
         datasets: [
           {
-            label: 'Intentos',
+            label: 'Puntuacion',
             data: this.temp_notes,
           },
         ],
