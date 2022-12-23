@@ -1,0 +1,16 @@
+
+.register_pass_div {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+
+      .register_pass {
+        color: var(--ion-color-primary-green);
+        text-decoration: none;
+        text-align: left;
+        font: normal 12px sans-serif, verdana;
+        min-width: 160px !important;
+      }
+    }

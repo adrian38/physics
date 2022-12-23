@@ -9,10 +9,19 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomePageModule),
     canActivate: [AuthGuardService],
   },
+ 
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./pages/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
+   /* canActivate: [AuthGuardService],*/
   },
   {
     path: 'contenido',
@@ -189,6 +198,11 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuardService],
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -154,4 +154,11 @@ export class LoginPage implements OnInit {
     //   animationDirection: 'forward',
     // });
   }
+
+  register_user(){
+    this.navController.navigateRoot('/register', {
+        animated: true,
+       animationDirection: 'forward',
+     });
+  }
 }

@@ -36,14 +36,20 @@
             type="submit"
             label="INICIAR SESIÓN"
           ></p-button>
+
+          <p-button (onClick)="register_user()"        
+          label="Registrarme"
+        ></p-button>
         </form>
       </div>
 
       <div class="forgotten_pass_div">
         <a class="forgotten_pass" (click)="forgottenPassword()"
-          >¿Has olvidado tu contraseña?</a
-        >
+          >¿Has olvidado tu contraseña?</a>
+      </div>
+
+   
       </div>
     </div>
-  </div>
+  
 </ion-content>
