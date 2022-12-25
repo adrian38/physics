@@ -6,7 +6,9 @@ import { UsuarioModel } from '../models/usuario.model';
   providedIn: 'root',
 })
 export class ApiService {
-  url_server: string = 'https://moviesapi20221211011349.azurewebsites.net';
+  //url_server: string = 'https://moviesapi20221211011349.azurewebsites.net';
+  url_server: string = 'https://localhost:44323';
+
 
   user = new UsuarioModel();
 
@@ -23,20 +25,20 @@ export class ApiService {
         password: password,
       };
 
-      // console.log(postParams, 'postParams User');
+       console.log(postParams, 'postParams User');
 
       try {
         this.http
           .post(`${this.url_server}/login`, postParams)
           .subscribe(async (data: any) => {
-            // console.log(data, 'user');
+             console.log(data, 'user');
 
             if (data.length > 0) {
-              this.user.username = data[0].email;
+              this.user.email = data[0].email;
               this.user.group = data[0].group;
               this.user.name = data[0].full_name;
               this.user.id = data[0].id;
-              this.user.phone = data[0].phone_number;
+              this.user.phone_number = data[0].phone_number;
               this.user.type = data[0].type;
               this.user.connected = true;
               resolve(true);
@@ -109,6 +111,49 @@ export class ApiService {
             reject();
           }
         });
+    });
+  }
+
+  async register ( body: any): Promise<boolean> {
+    return new Promise<boolean>(async (resolve, reject) => {
+      const postParams: any = body
+
+      delete postParams.avatar;
+      delete postParams.connected;
+      delete postParams.date;
+      delete postParams.error;
+      delete postParams.address;
+      delete postParams.connection_id;
+      delete postParams.id;
+      delete postParams.partner_id;
+      delete postParams.name;
+      postParams.type="Estudiante";
+
+      console.log(postParams, 'postParams User');
+
+      try {
+        this.http
+          .post(`${this.url_server}/user`, postParams)
+          .subscribe(async (data: any) => {
+             console.log(data, 'user');
+
+           if (data == null) {
+              /*this.user.username = data[0].email;
+              this.user.group = data[0].group;
+              this.user.name = data[0].full_name;
+              this.user.id = data[0].id;
+              this.user.phone = data[0].phone_number;
+              this.user.type = data[0].type;
+              this.user.connected = true; */
+              resolve(true);
+            } else {
+              resolve(false);
+            }
+          });
+      } catch (err) {
+        console.log('************* err *************');
+        console.log(err);
+      }
     });
   }
 }

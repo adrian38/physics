@@ -33,36 +33,36 @@ export class Address {
 }
 
 export class UsuarioModel {
-  username: string;
+  email: string;
   password: string;
   name: string;
   connection_id: number;
   partner_id: number;
   type: string;
   connected: boolean;
-  phone: number;
+  phone_number: number;
   id: number;
-  realname: string;
+  full_name: string;
   address: Address;
   date: string;
   avatar: any;
   error: number;
-  group: number;
+  group: string;
 
   constructor() {
-    this.username = '';
+    this.email = ''; 
     this.password = '';
     this.name = '';
     this.connection_id = 0;
     this.partner_id = 0;
     this.type = '';
     this.connected = false;
-    this.phone = 0;
+    this.phone_number = 0; 
     this.id = 0;
-    this.realname = '';
+    this.full_name = '';
     this.date = '';
     this.avatar = '';
     this.error = 0;
-    this.group = 0;
+    this.group = '';
   }
 }

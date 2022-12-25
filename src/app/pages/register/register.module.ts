@@ -8,6 +8,9 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import { ButtonModule } from 'primeng/button';
+import { ComponentsModule } from 'src/app/components/components.module';
+
+import { LottieModule } from 'ngx-lottie';
 
 @NgModule({
   imports: [
@@ -15,7 +18,9 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     IonicModule,
     RegisterPageRoutingModule,
-    ButtonModule
+    ButtonModule,
+    ComponentsModule,
+    LottieModule
   ],
   declarations: [RegisterPage]
 })

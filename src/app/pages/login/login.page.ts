@@ -82,6 +82,7 @@ export class LoginPage implements OnInit {
 
   checkUser() {
     this.user = this._apiService.getUser();
+    console.log(this.user, "user");
     if (this.user.type === 'Estudiante') {
       if (this.loading) {
         this.loading.dismiss();
@@ -101,7 +102,7 @@ export class LoginPage implements OnInit {
 
   onSubmit() {
     // console.log(this.user, 'user');
-    this.login(this.user.username, this.user.password);
+    this.login(this.user.email, this.user.password);
   }
 
   async showAlert() {

@@ -48,6 +48,12 @@ export class HeaderComponent implements OnInit {
         animated: true,
         animationDirection: 'back',
       });
+    }
+      else if (this._location.isCurrentPathEqualTo('/register')) {
+        this.navCon.navigateRoot('/login', {
+          animated: true,
+          animationDirection: 'back',
+        });
     } else if (this._location.isCurrentPathEqualTo('/exam-circu')) {
       this.navCon.navigateRoot('/autoexamen', {
         animated: true,

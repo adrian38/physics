@@ -1,9 +1,114 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [back]="true" headerText="REGISTARSE"></app-header>
 
-<ion-content>
+<ion-content [fullscreen]="true"  >
+  <div class="login">
+    <div class="login_buttons">
+      <div style="display: flex; justify-content: flex-start">
+    
+  <div class="one_button">
+    <form #invalid_form="ngForm" >
+      <ion-input
+      class="custom_input"
+      type="realname"
+      name="realname"
+      [(ngModel)]="user.full_name"
+      minlength="3"
+      placeholder="Nombre completo"
+      required
+    > </ion-input>
+  
+
+  
+      
+      <ion-input
+      class="custom_input"
+      type="phone"
+      name="phone"
+      [(ngModel)]="user.phone_number"
+      minlength="3"
+      placeholder="Teléfono"
+      required
+    >
+        </ion-input>
+  
+
+
+    <ion-input
+    class="custom_input"
+    type="group"
+    name="group"
+    [(ngModel)]="user.group"
+    minlength="3"
+    placeholder="Grupo"
+    required
+  >
+      </ion-input>
+
+
+ 
+      <ion-input
+      [disabled]="true"
+      class="custom_input"
+      type="text"
+      name="date"
+      placeholder="Fecha de nacimiento"
+      required
+    >
+        </ion-input>
+      <ion-input
+      class="custom_input"
+      type="date"
+      name="date"
+      [(ngModel)]="user.date"
+      placeholder="Fecha de nacimiento"
+      required
+    >
+   </ion-input>
+  
+
+    
+      <ion-input
+        class="custom_input"
+        type="email"
+        name="user"
+        [(ngModel)]="user.email"
+        placeholder="CORREO"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required
+      >
+      </ion-input>
+    
+
+
+  
+      <ion-input
+      class="custom_input"
+      type="password"
+      name="password"
+      [(ngModel)]="user.password"
+      minlength="3"
+      placeholder="CONTRASEÑA"
+      required
+    >
+        </ion-input>
+
+        <ion-input
+            class="custom_input"
+            type="password"
+            name="password"
+            [(ngModel)]="user.password"
+            minlength="3"
+            placeholder="Repetir contraseña"
+            required
+          >
+          </ion-input>
+          <p-button (onClick)="set_user(user)"  
+          label="Registar Datos"
+        ></p-button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
 
 </ion-content>
