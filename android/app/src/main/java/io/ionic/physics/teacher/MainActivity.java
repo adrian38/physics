@@ -1,4 +1,4 @@
-package io.ionic.physics;
+package io.ionic.physics.teacher;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.physics",
-  "appName": "physics",
+  "appId": "io.ionic.physics.teacher",
+  "appName": "physics-teacher",
   "webDir": "www",
   "bundledWebRuntime": false,
 
