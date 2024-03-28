@@ -14,13 +14,13 @@ export class AuthGuardService {
   user: UsuarioModel = new UsuarioModel();
   constructor(private _apiService: ApiService, private route: Router) {}
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.user = this._apiService.getUser();
-    if (this.user.connected == true) {
+    // this.user = this._apiService.getUser();
+    // if (this.user.connected == true) {
       return true;
-    } else {
-      console.error('Guard!!! PleaseLogin');
-      this.route.navigateByUrl('/login');
-      return false;
-    }
+    // } else {
+    //   console.error('Guard!!! PleaseLogin');
+    //   this.route.navigateByUrl('/login');
+    //   return false;
+    // }
   }
 }

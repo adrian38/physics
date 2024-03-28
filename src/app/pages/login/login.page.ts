@@ -33,20 +33,25 @@ export class LoginPage implements OnInit {
   ngOnDestroy() {}
 
   async login(email: string, password: string) {
-    this.showLoading('Verificando');
+    // this.showLoading('Verificando');
 
-    try {
-      if (await this._apiService.login(email, password)) {
-        this.checkUser();
-      } else {
-        this.btn_disabled = false;
-        this.showAlert();
-      }
-    } catch (err) {
-      this.btn_disabled = false;
-      this.showAlert();
-    }
-    this.loading.dismiss();
+    // try {
+    //   if (await this._apiService.login(email, password)) {
+    //     this.checkUser();
+    //   } else {
+    //     this.btn_disabled = false;
+    //     this.showAlert();
+    //   }
+    // } catch (err) {
+    //   this.btn_disabled = false;
+    //   this.showAlert();
+    // }
+    // this.loading.dismiss();
+
+     this.navController.navigateRoot('/home', {
+        animated: true,
+        animationDirection: 'forward',
+      });
   }
 
   subscriptions() {
