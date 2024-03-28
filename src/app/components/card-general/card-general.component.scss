@@ -1,50 +1,90 @@
-.image-left {
-  width: 25vh;
-  max-width: 100px;
-  height: 25vh;
-  max-height: 100px;
-  padding: 5%;
-
-  img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 90%;
-    max-height: 90%;
-    border-radius: 2px;
-  }
+@font-face {
+    font-family: 'ComicNeue-Md';
+    src: url('/assets/fonts/ComicNeue-Regular.otf') format('opentype');
 }
 
-.image-strech {
-  width: 25vh;
-  max-width: 100px;
-  height: 25vh;
-  max-height: 100px;
-  padding: 5%;
-
-  img {
-    flex-shrink: 0;
-    max-width: 98%;
-    min-height: 90%;
-    max-height: 90%;
-    border-radius: 2px;
-  }
+@font-face {
+    font-family: 'ComicNeue-Bd';
+    src: url('/assets/fonts/ComicNeue_Bold.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'ComicNeue-light';
+    src: url('/assets/fonts/ComicNeue_Light.otf') format('opentype');
+}
+
+$font-comicneue-md: 'ComicNeue-Md';
+$font-comicneue-bd: 'ComicNeue-Bd';
+$font-comicneue-roman: 'ComicNeue-light';
+
+// .image-left {
+//     // width: 25vh;
+//     // max-width: 100px;
+//     // height: 25vh;
+//     // max-height: 100px;
+//     // padding: 5%;
+
+//     img {
+//         flex-shrink: 0;
+//         min-width: 100%;
+//         min-height: 90%;
+//         max-height: 90%;
+//         border-radius: 2px;
+//     }
+// }
+
+// .image-strech {
+//     width: 25vh;
+//     max-width: 100px;
+//     height: 25vh;
+//     max-height: 100px;
+//     padding: 5%;
+
+//     img {
+//         flex-shrink: 0;
+//         max-width: 98%;
+//         min-height: 90%;
+//         max-height: 90%;
+//         border-radius: 2px;
+//     }
+// }
 
 .card-title {
-  text-align: center;
-  margin-top: 15%;
-  font-weight: 500;
-  color: black;
-  font-size: x-large;
-  font-family: "Helvetica-Md";
+    text-align: center;
+    margin: 10%;
+    font-weight: 500;
+    color: black;
+    font-size: large;
+    font-family: 'ComicNeue-Bd';
 }
 
-.text-helvetica-medium {
-  font-family: "Helvetica-Md" !important;
-  font-size: 21px;
-}
+// .text-helvetica-medium {
+//     font-family: 'ComicNeue-Md' !important;
+//     font-size: 21px;
+// }
 
-ion-card {
-  // border: 1px solid #63b5f6;
-  box-shadow: rgba(99, 181, 246, 0.35) 0px 5px 15px;
-}
+// ion-card {
+//     // border: 1px solid #63b5f6;
+//     box-shadow: rgba(99, 181, 246, 0.35) 0px 5px 15px;
+// }
+
+// .card {
+//     max-width: 100%;
+//     border: 1px solid #ddd;
+//     border-radius: 8px;
+//     overflow: hidden;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// }
+
+// .card img {
+//     width: 50%;
+//     height: auto;
+//     display: block;
+// }
+
+// .card .title {
+//     text-align: center;
+//     padding: 16px;
+//     font-size: 24px;
+//     font-family: Arial, sans-serif;
+// }

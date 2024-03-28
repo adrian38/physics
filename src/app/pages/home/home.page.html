@@ -1,12 +1,11 @@
 <app-header [back]="true" headerText="Indice"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list style="margin-top: 7%">
-    <ion-item-sliding *ngFor="let element of options; let i = index">
-      <app-card-general
-        (click)="routeTopage(i)"
-        [title]="element"
-      ></app-card-general>
-    </ion-item-sliding>
-  </ion-list>
+    <div style="display: flex; flex-wrap: wrap; margin-top: 7%">
+        <div *ngFor="let element of options; let i = index" style="max-width: 50%">
+            <ion-item-sliding>
+                <app-card-general (click)="routeTopage(i)" [title]="element"></app-card-general>
+            </ion-item-sliding>
+        </div>
+    </div>
 </ion-content>
